@@ -5,7 +5,7 @@ import Logo from "../../Assets/Logo.svg";
 
 const Header = () => {
   return (
-    <nav style={{background: "#FF731D"}}>
+    <nav >
       <div className="nav-logo-container">
         <img src={Logo} alt="" />
       </div>
