@@ -1,20 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
-import Logo from "../../Assets/Logo.svg";
-
+import logo from "../../Assets/logo.png";
+import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <nav >
-      <div className="nav-logo-container">
-        <img src={Logo} alt="" />
+    <nav>
+      <div className="logo">
+        <img src={logo} alt="" />
       </div>
       <div className="navbar-links-container">
-        <a href="">Trang chủ</a>
-        <a href="">Giới thiệu</a>
-        <a href="">Đánh giá</a>
-        <a href="">Liên hệ</a>
-        <button className="primary-button">Đăng nhập</button>
+        <Link to="/">Trang chủ</Link>
+        <Link to="/about">Giới thiệu</Link>
+        <Link to="/report">Đánh giá</Link>
+        <Link to="/contact">Liên hệ</Link>
+
+        <Link to="/login" className="primary-button">
+          Đăng nhập
+        </Link>
       </div>
     </nav>
   );

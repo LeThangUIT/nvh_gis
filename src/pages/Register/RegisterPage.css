@@ -1,9 +1,9 @@
-.container-register {
+.register-container {
   display: grid;
   grid-template-columns: 50% 50%;
 }
 
-.left-container {
+.register-container .left-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,17 +11,17 @@
   background: #07defc;
   background-size: cover;
   /* 
-    background: linear-gradient(
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.3)
-      ),
-      url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
-    background-position: center; */
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+  background-position: center; */
 }
 
 form {
   background-color: white;
-  padding: 10px 100px;
+  padding: 10px 80px;
   border-radius: 10px;
 }
 
@@ -30,15 +30,16 @@ form {
   width: 100%;
   font-weight: bold;
   color: #07defc;
+  margin-top: 10px;
 }
 
 form h1 {
   color: #07defc;
   text-align: center;
-  margin: 5px;
+  margin: 15px;
 }
 
-button {
+.register-button > button {
   width: 50%;
   height: 50px;
   padding: 10px;
@@ -50,17 +51,21 @@ button {
   font-size: 18px;
   cursor: pointer;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .right-container {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .right-container img {
-  width: 60%;
+  width: 70%;
+  height: 80%;
+  object-fit: cover;
   border-radius: 10px;
 }
 
@@ -77,8 +82,11 @@ button {
   font-size: 15px;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  margin-left: 30px;
+  padding: 10px 10px 20px 10px;
 }
 
 .register-button .login-btn .icon-right {
-  margin-left: 5px;
+  margin-left: 10px;
 }

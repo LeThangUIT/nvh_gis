@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./RegisterPage.css";
-import FormInput from "../../Components/FormInput/FormInput";
+import FormInput from "../../Components/FormInput/FormInput.jsx";
 import { BsPersonCircle } from "react-icons/bs";
 import { FiArrowRight } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
   const [values, setValues] = useState({
@@ -19,18 +20,18 @@ const RegisterPage = () => {
       name: "username",
       type: "text",
       errorMessage: "Tên phải có 3-16 ký tự và không bao gồm ký tự đặc biệt!",
-      label: "Họ và Tên",
+      label: "Tên đăng nhập",
       pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
     },
-    {
-      id: 2,
-      name: "email",
-      type: "email",
-      errorMessage: "Phải là một địa chỉ email hợp lệ!",
-      label: "Email",
-      required: true,
-    },
+    // {
+    //   id: 2,
+    //   name: "email",
+    //   type: "email",
+    //   errorMessage: "Phải là một địa chỉ email hợp lệ!",
+    //   label: "Email",
+    //   required: true,
+    // },
     {
       id: 3,
       name: "std",
@@ -68,7 +69,7 @@ const RegisterPage = () => {
 
   return (
     <>
-      <div className="container-register">
+      <div className="register-container">
         <div className="left-container">
           <form onSubmit={handleSubmit}>
             <BsPersonCircle className="icon" />
@@ -83,10 +84,10 @@ const RegisterPage = () => {
             ))}
             <div className="register-button">
               <button>Đăng ký</button>
-              <button className="login-btn">
+              <Link to="/login" className="login-btn">
                 Đăng nhập
                 <FiArrowRight className="icon-right" />
-              </button>
+              </Link>
             </div>
           </form>
         </div>

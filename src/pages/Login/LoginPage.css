@@ -1,9 +1,9 @@
-.container-login {
+.login-container {
   display: grid;
   grid-template-columns: 50% 50%;
 }
 
-.left-container-login {
+.login-left-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,15 +11,15 @@
   background: #07defc;
   background-size: cover;
   /* 
-      background: linear-gradient(
-          rgba(255, 255, 255, 0.7),
-          rgba(255, 255, 255, 0.3)
-        ),
-        url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
-      background-position: center; */
+    background: linear-gradient(
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.3)
+      ),
+      url("https://images.pexels.com/photos/114979/pexels-photo-114979.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    background-position: center; */
 }
 
-.left-container-login form {
+.login-left-container form {
   background-color: white;
   padding: 50px 100px;
   border-radius: 10px;
@@ -32,14 +32,14 @@
   color: #07defc;
 }
 
-.left-container-login form h1 {
+.login-left-container form h1 {
   color: #07defc;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 50px;
 }
 
-.left-container-login form button {
+.login-left-container form button {
   width: 50%;
   height: 50px;
   padding: 10px;
@@ -61,7 +61,9 @@
 }
 
 .right-container img {
-  width: 60%;
+  width: 70%;
+  height: 80%;
+  object-fit: cover;
   border-radius: 10px;
 }
 
@@ -78,8 +80,11 @@
   font-size: 15px;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
+  margin-left: 30px;
+  margin-top: 50px;
 }
 
 .login-button .register-btn .icon-right {
-  margin-left: 5px;
+  margin-left: 10px;
 }
