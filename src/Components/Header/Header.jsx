@@ -12,9 +12,9 @@ const Header = () => {
       </div>
       <div className="navbar-links-container">
         <Link to="/">Trang chủ</Link>
-        <Link to="/about">Giới thiệu</Link>
-        <Link to="/report">Đánh giá</Link>
-        <Link to="/contact">Liên hệ</Link>
+        <a href="#about">Giới thiệu</a>
+        <a href="#contact">Liên hệ</a>
+        <a href="#rating">Đánh giá</a>
 
         <Link to="/login" className="primary-button">
           Đăng nhập
