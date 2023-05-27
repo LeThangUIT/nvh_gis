@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./RegisterPage.css";
 import FormInput from "../../Components/FormInput/FormInput.jsx";
-import { BsPersonCircle } from "react-icons/bs";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import logo from "../../Assets/logo.png";
 
 const RegisterPage = () => {
   const [values, setValues] = useState({
@@ -72,7 +72,9 @@ const RegisterPage = () => {
       <div className="register-container">
         <div className="left-container">
           <form onSubmit={handleSubmit}>
-            <BsPersonCircle className="icon" />
+            <Link to="/" className="logo-icon">
+              <img src={logo} alt="" />
+            </Link>
             <h1>Đăng ký</h1>
             {inputs.map((input) => (
               <FormInput

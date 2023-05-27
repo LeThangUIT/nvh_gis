@@ -25,9 +25,14 @@ form {
   border-radius: 10px;
 }
 
-.icon {
-  font-size: 50px;
-  width: 100%;
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.logo-icon > img {
+  width: 50px;
   font-weight: bold;
   color: #07defc;
   margin-top: 10px;

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./LoginPage.css";
 import FormInput from "../../Components/FormInput/FormInput.jsx";
-import { BsPersonCircle } from "react-icons/bs";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import logo from "../../Assets/logo.png";
 
 const LoginPage = () => {
   const [values, setValues] = useState({
@@ -16,6 +16,7 @@ const LoginPage = () => {
       id: 1,
       name: "username",
       type: "text",
+      errorMessage: "Vui lòng nhập tên đăng nhập",
       label: "Tên đăng nhập",
       required: true,
     },
@@ -23,6 +24,7 @@ const LoginPage = () => {
       id: 2,
       name: "password",
       type: "password",
+      errorMessage: "Vui lòng nhập mật khẩu",
       label: "Mật khẩu",
       required: true,
     },
@@ -46,7 +48,9 @@ const LoginPage = () => {
       </div>
       <div className="login-left-container">
         <form onSubmit={handleSubmit}>
-          <BsPersonCircle className="icon" />
+          <Link to="/" className="logo-icon">
+            <img src={logo} alt="" />
+          </Link>
           <h1>Đăng nhập</h1>
           {inputs.map((input) => (
             <FormInput
