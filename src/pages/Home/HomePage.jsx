@@ -3,7 +3,7 @@ import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import BannerBackground from "../../Assets/home-banner-background.png";
 import AboutBackground from "../../Assets/about-background.png";
-import AboutBackgroundImage from "../../Assets/about-background-image.png";
+import AboutBackgroundImage from "../../Assets/booking_pic1.png";
 import { FiArrowRight } from "react-icons/fi";
 import { BsFillPlayCircleFill } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";

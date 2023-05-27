@@ -103,7 +103,7 @@ nav {
 }
 .secondary-button {
   padding: 1rem 2.5rem;
-  background-color: #fe9e0d;
+  background-color: #00A4E0;
   outline: none;
   border: none;
   border-radius: 5rem;
@@ -121,7 +121,7 @@ nav {
   font-size: 1.5rem;
 }
 .secondary-button:hover {
-  background-color: #e48f0f;
+  background-color: #0089bb;
 }
 .about-section-container {
   margin-top: 20rem;
@@ -147,7 +147,7 @@ nav {
 }
 .primary-subheading {
   font-weight: 700;
-  color: #fe9e0d;
+  color: #00A4E0;
   font-size: 1.15rem;
 }
 .about-buttons-container {

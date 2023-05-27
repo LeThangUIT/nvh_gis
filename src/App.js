@@ -7,6 +7,7 @@ import ProfilePage from "./pages/Profile/ProfilePage";
 import ContactPage from "./pages/Contact/ContactPage";
 import PitchIndex from "./pages/Pitch";
 import BookingPage from "./pages/Booking/BookingPage";
+import ModelPage from "./pages/Model/ModelPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="profile/*" element={<ProfilePage />} />
         <Route path="/pitch" element={<PitchIndex />} />
         <Route path="/booking" element={<BookingPage />} />
+        <Route path="/model" element={<ModelPage />} />
       </Routes>
     </>
   );

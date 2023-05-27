@@ -12,10 +12,8 @@ const Header = () => {
       </div>
       <div className="navbar-links-container">
         <Link to="/">Trang chủ</Link>
-        <a href="#about">Giới thiệu</a>
-        <a href="#contact">Liên hệ</a>
-        <a href="#rating">Đánh giá</a>
-
+        <Link to="/model">Mô hình</Link> 
+        <Link to="/booking">Dịch vụ</Link>
         <Link to="/login" className="primary-button">
           Đăng nhập
         </Link>
