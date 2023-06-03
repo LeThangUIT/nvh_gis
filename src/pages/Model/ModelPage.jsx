@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 
@@ -11,6 +11,7 @@ import esriRequest from "@arcgis/core/request";
 import HaiChieu from "../../Data/HaiChieu.json";
 import BacThang from "../../Data/BacThang.geojson";
 function ModelPage() {
+  const mapRef = useRef(null)
   //here
   //2D
   var createGraphic = function (data) {
@@ -89,31 +90,31 @@ function ModelPage() {
     ],
   };
 
-  const geojsonLayer = new GeoJSONLayer({
-    url: url,
-    copyright: "Houseculture",
-    popupTemplate: template,
-    renderer: renderer, //optional
-  });
-
-  var map = new Map({
-    basemap: "topo-vector",
-    layers: [geojsonLayer],
-  });
-
-  var viewOptions = {
-    container: document.getElementById("viewDiv"),
-    map: map,
-    camera: {
-      position: [106.803838, 10.875093, 300],
-      heading: 275,
-      tilt: 50,
-    },
-  };
-
-  var view = new SceneView(viewOptions);
-
-  useEffect(() => {
+  
+  useEffect( () => {
+    const geojsonLayer = new GeoJSONLayer({
+      url: url,
+      copyright: "Houseculture",
+      popupTemplate: template,
+      renderer: renderer, //optional
+    });
+  
+    var map = new Map({
+      basemap: "topo-vector",
+      layers: [geojsonLayer],
+    });
+  
+    var viewOptions = {
+      container: mapRef.current,
+      map: map,
+      camera: {
+        position: [106.803838, 10.875093, 300],
+        heading: 275,
+        tilt: 50,
+      },
+    };
+  
+    var view = new SceneView(viewOptions);
     const asyncFn = async () => {
       const response = await esriRequest(HaiChieu, json_options);
       var graphicsLayer = new GraphicsLayer();
@@ -128,7 +129,7 @@ function ModelPage() {
   return (
     <div className="home-container">
       <Header />
-      <div id="viewDiv" style={{ height: "80vh" }}></div>
+      <div ref={mapRef} style={{ height: "100vh" }}></div>
       <Footer />
     </div>
   );
