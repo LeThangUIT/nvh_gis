@@ -8,7 +8,7 @@ import GeoJSONLayer from "@arcgis/core/layers/GeoJSONLayer.js";
 import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer.js";
 import Graphic from "@arcgis/core/Graphic.js";
 import esriRequest from "@arcgis/core/request";
-import HaiChieu from "../../Data/HaiChieu.json";
+import HaiChieu from "../../Data/HaiChieu.geojson";
 import BacThang from "../../Data/BacThang.geojson";
 function ModelPage() {
   const mapRef = useRef(null)
