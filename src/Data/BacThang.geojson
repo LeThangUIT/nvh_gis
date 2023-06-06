@@ -4,7 +4,7 @@
     {
       "type": "Feature",
       "properties": {
-        "Building name": "tầng thượng",
+        "Building name": "tầng 6",
         "height": 0.5,
         "idb": "7",
         "color": "0"
@@ -631,15 +631,14 @@
             ]
           ]
         ]
-      },
-      "id": "7"
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "Building name": "Khung Tầng 2",
         "height": 1.7,
-        "idb": "7",
+        "idb": "2",
         "color": "50"
       },
       "geometry": {
@@ -736,15 +735,14 @@
             [106.8009584552323, 10.8748042169194, 4]
           ]
         ]
-      },
-      "id": "2"
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "Building name": "Khung Tầng 3",
         "height": 0.5,
-        "idb": "7",
+        "idb": "3",
         "color": "0"
       },
       "geometry": {
@@ -982,15 +980,14 @@
             ]
           ]
         ]
-      },
-      "id": "3"
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "Building name": "Khung Tầng 4",
         "height": 0.5,
-        "idb": "7",
+        "idb": "4",
         "color": "0"
       },
       "geometry": {
@@ -1218,15 +1215,14 @@
             ]
           ]
         ]
-      },
-      "id": "4"
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "Building name": "Khung Tầng 5",
         "height": 0.5,
-        "idb": "7",
+        "idb": "5",
         "color": "0"
       },
       "geometry": {
@@ -1452,15 +1448,14 @@
             ]
           ]
         ]
-      },
-      "id": "5"
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "Building name": "Khung Tầng 6",
         "height": 0.5,
-        "idb": "7",
+        "idb": "6",
         "color": "0"
       },
       "geometry": {
@@ -1686,15 +1681,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng 1, tầng thượng",
+        "Building name": "Phòng 1, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -1715,15 +1709,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng 2, tầng thượng",
+        "Building name": "Phòng 2, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -1748,16 +1741,15 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
 
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng nhỏ dài trên phòng 2, tầng thượng",
+        "Building name": "Phòng nhỏ dài trên phòng 2, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -1786,15 +1778,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng bên phải phòng 2, tầng thượng",
+        "Building name": "Phòng bên phải phòng 2, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -1817,15 +1808,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng 3, tầng thượng",
+        "Building name": "Phòng 3, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -1854,15 +1844,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng 4, tầng thượng",
+        "Building name": "Phòng 4, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -1893,15 +1882,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng 5, tầng thượng",
+        "Building name": "Phòng 5, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -1932,15 +1920,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng 6, tầng thượng",
+        "Building name": "Phòng 6, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -1959,15 +1946,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng 7, tầng thượng",
+        "Building name": "Phòng 7, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -2030,15 +2016,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng 8, tầng thượng",
+        "Building name": "Phòng 8, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -2066,15 +2051,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
-        "Building name": "Phòng 9, tầng thượng",
+        "Building name": "Phòng 9, tầng 6",
         "height": 4,
-        "idb": "7",
+        "idb": "6",
         "color": "5000"
       },
       "geometry": {
@@ -2107,15 +2091,14 @@
             ]
           ]
         ]
-      },
-      "id": "6"
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "Building name": "trụ quanh nhà ngoài trụ cổng",
         "height": 5,
-        "idb": "7",
+        "idb": "2",
         "color": "0"
       },
       "geometry": {
@@ -2274,15 +2257,14 @@
             ]
           ]
         ]
-      },
-      "id": "1"
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "Building name": "trụ cổng chính (2 trụ cao)",
         "height": 11,
-        "idb": "7",
+        "idb": "2",
         "color": "0"
       },
       "geometry": {
@@ -2335,15 +2317,14 @@
             ]
           ]
         ]
-      },
-      "id": "1"
+      }
     },
     {
       "type": "Feature",
       "properties": {
         "Building name": "mái cổng chính",
         "height": 0.25,
-        "idb": "7",
+        "idb": "2",
         "color": "0"
       },
       "geometry": {
@@ -2356,8 +2337,7 @@
             [106.8010667170155, 10.8751882492231, 13.1]
           ]
         ]
-      },
-      "id": "1"
+      }
     }
   ]
 }
