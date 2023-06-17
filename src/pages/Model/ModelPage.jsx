@@ -5,20 +5,22 @@ import Footer from "../../Components/Footer/Footer";
 import Map from "@arcgis/core/Map";
 import Mesh from "@arcgis/core/geometry/Mesh.js";
 import Point from "@arcgis/core/geometry/Point.js";
-import SpatialReference from "@arcgis/core/geometry/SpatialReference.js";
-import * as meshUtils from "@arcgis/core/geometry/support/meshUtils.js";
 import SceneView from "@arcgis/core/views/SceneView.js";
 import GeoJSONLayer from "@arcgis/core/layers/GeoJSONLayer.js";
 import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer.js";
 import Graphic from "@arcgis/core/Graphic.js";
 import esriRequest from "@arcgis/core/request";
 import HaiChieu from "../../Data/HaiChieu.geojson";
-import BacThang from "../../Data/BacThang.geojson";
+import BaChieu from "../../Data/BaChieu.geojson";
+
 import hoatietLen from "../../Data/Sketchup/sketchup1.glb";
 import hoatietXuong from "../../Data/Sketchup/sketchup2.glb";
 import trumai_congchinh from "../../Data/Sketchup/trumai_congchinh.glb";
 import trutangG from "../../Data/Sketchup/trutangG.glb";
 import trutangG_matsau from "../../Data/Sketchup/trutangG_matsau.glb";
+import hoatiet_mattruoc from "../../Data/Sketchup/hoatiet_mattruoc.glb";
+import hoatiet_phaitren from "../../Data/Sketchup/hoatiet_phaitren.glb";
+
 
 function ModelPage() {
   const mapRef = useRef(null);
@@ -41,7 +43,7 @@ function ModelPage() {
   };
   //
   //3d
-  const url = BacThang;
+  const url = BaChieu;
 
   const template = {
     title: "{Building name}",
@@ -94,6 +96,7 @@ function ModelPage() {
         stops: [
           { value: 0, color: "white" },
           { value: 50, color: "green" },
+          {value: 100, color: [153, 217, 234]},
           { value: 5000, color: "red" },
         ],
       },
@@ -106,173 +109,212 @@ function ModelPage() {
       z: 31.8,
     }),
     new Point({
-      x: 106.801021482352,
-      y: 10.8751634988415,
+      x: 106.8010216002598,
+      y: 10.8751646243265,
       z: 31.8,
     }),
+    new Point({
+      x: 106.8010228976289,
+      y: 10.8751867997302,
+      z: 31.8,
+    }),
+    new Point({
+      x: 106.8010242830173,
+      y: 10.8752085891775,
+      z: 31.8,
+    })
   ];
   const positionListXuong = [
     new Point({
-      x: 106.8010208655628,
-      y: 10.8751523267307,
+      x: 106.8010209251016,
+      y: 10.8751532393889,
       z: 31.85,
     }),
-  ];
-
-  const truNganXungQuanh = [
-                // tru mat truoc
-                new Point({
-                    x: 106.8008998090075,
-                    y: 10.8753143636202,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8008967390142,
-                    y: 10.8752540526603,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8008942486361,
-                    y: 10.875190917475,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8008850601529,
-                    y: 10.8749906690041,
-                    z: 10.6,
-                }),
-
-                new Point({
-                    x: 106.8008822239574,
-                    y: 10.8749282137786,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8008793862248,
-                    y: 10.8748645800804,
-                    z: 10.6,
-                }),
-                // tru trai tren
-                new Point({
-                    x: 106.8008192164225,
-                    y: 10.8748155711794,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8007472389364,
-                    y: 10.8747709015878,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8005891143255,
-                    y: 10.8746730347463,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8005071977604,
-                    y: 10.8746295372425,
-                    z: 10.6,
-                }),
-                // tru trai duoi
-                new Point({
-                    x: 106.8004147392174,
-                    y: 10.8746621033312,
-                    z: 10.6,
-                }),
-
-                new Point({
-                    x: 106.800255805588,
-                    y: 10.8747942223917,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8001691316963,
-                    y: 10.8748661417271,
-                    z: 10.6,
-                }),
-                // tru phai duoi
-                new Point({
-                    x: 106.8001978353117,
-                    y: 10.8753802207828,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8002754038429,
-                    y: 10.8754310557639,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8003546972048,
-                    y: 10.8754828824904,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8004333896031,
-                    y: 10.8755347940046,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8005155295267,
-                    y: 10.8755751558578,
-                    z: 10.6,
-                }),
-                // tru phai tren
-                new Point({
-                    x: 106.8007356830422,
-                    y: 10.875459315117,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8008552961659,
-                    y: 10.875366526588,
-                    z: 10.6,
-                })
-            ];
-  const truCaoGiua = [
     new Point({
-      x: 106.8008974135815,
-      y: 10.875048539353,
-      z: 16.8,
+      x: 106.8010223019298,
+      y: 10.8751757163479,
+      z: 31.85,
     }),
+    new Point({
+      x: 106.8010235345282,
+      y: 10.8751976991819,
+      z: 31.85,
+    }),
+    new Point({
+      x: 106.8010249631636,
+      y: 10.8752196206982,
+      z: 31.85,
+    })
+  ];
+  const truNganXungQuanh = [
+    // tru mat truoc
+    new Point({
+      x: 106.8008998090075,
+      y: 10.8753143636202,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8008967390142,
+      y: 10.8752540526603,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8008942486361,
+      y: 10.875190917475,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8008850601529,
+      y: 10.8749906690041,
+      z: 10.6,
+    }),
+
+    new Point({
+      x: 106.8008822239574,
+      y: 10.8749282137786,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8008793862248,
+      y: 10.8748645800804,
+      z: 10.6,
+    }),
+    // tru trai tren
+    new Point({
+      x: 106.8008192164225,
+      y: 10.8748155711794,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8007472389364,
+      y: 10.8747709015878,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8005891143255,
+      y: 10.8746730347463,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8005071977604,
+      y: 10.8746295372425,
+      z: 10.6,
+    }),
+    // tru trai duoi
+    new Point({
+      x: 106.8004147392174,
+      y: 10.8746621033312,
+      z: 10.6,
+    }),
+
+    new Point({
+      x: 106.800255805588,
+      y: 10.8747942223917,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8001691316963,
+      y: 10.8748661417271,
+      z: 10.6,
+    }),
+    // tru phai duoi
+    new Point({
+      x: 106.8001978353117,
+      y: 10.8753802207828,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8002754038429,
+      y: 10.8754310557639,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8003546972048,
+      y: 10.8754828824904,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8004333896031,
+      y: 10.8755347940046,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8005155295267,
+      y: 10.8755751558578,
+      z: 10.6,
+    }),
+    // tru phai tren
+    new Point({
+      x: 106.8007356830422,
+      y: 10.875459315117,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8008552961659,
+      y: 10.875366526588,
+      z: 10.6,
+    })
+  ];
+  const truCaoGiua = [
     new Point({
       x: 106.8009012987711,
       y: 10.8751328247517,
-      z: 16.8,
+      z: 16.8
     }),
+    new Point({
+      x: 106.8008974135815,
+      y: 10.875048539353,
+      z: 16.8
+    })
   ];
-const truMatsau = [
-                new Point({
-                    x: 106.8001222191377,
-                    y: 10.8752932001054,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.800118279629,
-                    y: 10.8752297547824,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8001141236037,
-                    y: 10.8751663163001,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8001099737203,
-                    y: 10.875099882461,
-                    z: 10.6,
-                }),
+  const truMatsau = [
+    new Point({
+      x: 106.8001222191377,
+      y: 10.8752932001054,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.800118279629,
+      y: 10.8752297547824,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8001141236037,
+      y: 10.8751663163001,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8001099737203,
+      y: 10.875099882461,
+      z: 10.6,
+    }),
 
+    new Point({
+      x: 106.8001058656165,
+      y: 10.8750337330329,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.80010202505,
+      y: 10.8749713576347,
+      z: 10.6,
+    })
+  ];
+  const positionHoatiet_phaitren = [
                 new Point({
-                    x: 106.8001058656165,
-                    y: 10.8750337330329,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.80010202505,
-                    y: 10.8749713576347,
-                    z: 10.6,
+                    x: 106.800837279964,
+                    y: 10.8754337967085,
+                    z: 31.8,
                 })
             ];
+            const positionHoatiet_matruoc = [
+                new Point({
+                    x: 106.8010193294543,
+                    y: 10.8751022923646,
+                    z: 31.8,
+                })
+            ];
+
   useEffect(() => {
     const geojsonLayer = new GeoJSONLayer({
       url: url,
@@ -305,87 +347,79 @@ const truMatsau = [
       });
       map.add(graphicsLayer);
     };
-    for (var i = 0; i < positionListLen.length; i++) {
-      Mesh.createFromGLTF(positionListLen[i], hoatietLen)
-        .then(function (geometry) {
-          const graphic = new Graphic({
-            geometry,
-            symbol: {
-              type: "mesh-3d",
-              symbolLayers: [
-                {
-                  type: "fill",
-                },
-              ],
-            },
-          });
+            for (var i = 0; i < positionHoatiet_matruoc.length; i++) {
+                Mesh.createFromGLTF(positionHoatiet_matruoc[i], hoatiet_mattruoc)
+                    .then(function (geometry) {
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
 
-          view.graphics.add(graphic);
-          console.log("success");
-        })
-        .catch(console.error);
-    }
-    for (var i = 0; i < positionListXuong.length; i++) {
-      Mesh.createFromGLTF(positionListXuong[i], hoatietXuong)
-        .then(function (geometry) {
-          const graphic = new Graphic({
-            geometry,
-            symbol: {
-              type: "mesh-3d",
-              symbolLayers: [
-                {
-                  type: "fill",
-                },
-              ],
-            },
-          });
+                        view.graphics.add(graphic);
+                        console.log("success")
+                    })
+                    .catch(console.error);
+            }
+            for (var i = 0; i < positionHoatiet_phaitren.length; i++) {
+                Mesh.createFromGLTF(positionHoatiet_phaitren[i], hoatiet_phaitren)
+                    .then(function (geometry) {
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
 
-          view.graphics.add(graphic);
-          console.log("success");
-        })
-        .catch(console.error);
-    }
-    for (var i = 0; i < truNganXungQuanh.length; i++) {
-      Mesh.createFromGLTF(truNganXungQuanh[i], trutangG)
-        .then(function (geometry) {
-          const graphic = new Graphic({
-            geometry,
-            symbol: {
-              type: "mesh-3d",
-              symbolLayers: [
-                {
-                  type: "fill",
-                },
-              ],
-            },
-          });
+                        view.graphics.add(graphic);
+                        console.log("success")
+                    })
+                    .catch(console.error);
+            }
+            for (var i = 0; i < truNganXungQuanh.length; i++) {
+                Mesh.createFromGLTF(truNganXungQuanh[i], trutangG)
+                    .then(function (geometry) {
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
 
-          view.graphics.add(graphic);
-          console.log("success");
-        })
-        .catch(console.error);
-    }
-    for (var i = 0; i < truCaoGiua.length; i++) {
-      Mesh.createFromGLTF(truCaoGiua[i], trumai_congchinh)
-        .then(function (geometry) {
-          const graphic = new Graphic({
-            geometry,
-            symbol: {
-              type: "mesh-3d",
-              symbolLayers: [
-                {
-                  type: "fill",
-                },
-              ],
-            },
-          });
+                        view.graphics.add(graphic);
+                        console.log("success")
+                    })
+                    .catch(console.error);
+            }
+            for (var i = 0; i < truCaoGiua.length; i++) {
+                Mesh.createFromGLTF(truCaoGiua[i], trumai_congchinh)
+                    .then(function (geometry) {
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
 
-          view.graphics.add(graphic);
-          console.log("success");
-        })
-        .catch(console.error);
-    }
-                for(var i = 0; i <truMatsau.length; i++){
+                        view.graphics.add(graphic);
+                        console.log("success")
+                    })
+                    .catch(console.error);
+            }
+            for (var i = 0; i < truMatsau.length; i++) {
                 Mesh.createFromGLTF(truMatsau[i], trutangG_matsau)
                     .then(function (geometry) {
                         const graphic = new Graphic({
