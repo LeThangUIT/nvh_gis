@@ -102,6 +102,7 @@ function ModelPage() {
 
         stops: [
           { value: 0, color: "white" },
+          { value: 1, color: "#E3E3E3" },
           { value: 50, color: "green" },
           { value: 75, color: "#086E9C"}, // màu  bảng tên
           { value: 100, color: [153, 217, 234] }, // màu tường phòng
