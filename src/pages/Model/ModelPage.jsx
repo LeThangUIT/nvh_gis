@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
+import BannerBackground from "../../Assets/home-banner-background.png";
 
 import Map from "@arcgis/core/Map";
 import Mesh from "@arcgis/core/geometry/Mesh.js";
@@ -120,114 +121,114 @@ function ModelPage() {
   ];
 
   const truNganXungQuanh = [
-                // tru mat truoc
-                new Point({
-                    x: 106.8008998090075,
-                    y: 10.8753143636202,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8008967390142,
-                    y: 10.8752540526603,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8008942486361,
-                    y: 10.875190917475,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8008850601529,
-                    y: 10.8749906690041,
-                    z: 10.6,
-                }),
+    // tru mat truoc
+    new Point({
+      x: 106.8008998090075,
+      y: 10.8753143636202,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8008967390142,
+      y: 10.8752540526603,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8008942486361,
+      y: 10.875190917475,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8008850601529,
+      y: 10.8749906690041,
+      z: 10.6,
+    }),
 
-                new Point({
-                    x: 106.8008822239574,
-                    y: 10.8749282137786,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8008793862248,
-                    y: 10.8748645800804,
-                    z: 10.6,
-                }),
-                // tru trai tren
-                new Point({
-                    x: 106.8008192164225,
-                    y: 10.8748155711794,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8007472389364,
-                    y: 10.8747709015878,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8005891143255,
-                    y: 10.8746730347463,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8005071977604,
-                    y: 10.8746295372425,
-                    z: 10.6,
-                }),
-                // tru trai duoi
-                new Point({
-                    x: 106.8004147392174,
-                    y: 10.8746621033312,
-                    z: 10.6,
-                }),
+    new Point({
+      x: 106.8008822239574,
+      y: 10.8749282137786,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8008793862248,
+      y: 10.8748645800804,
+      z: 10.6,
+    }),
+    // tru trai tren
+    new Point({
+      x: 106.8008192164225,
+      y: 10.8748155711794,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8007472389364,
+      y: 10.8747709015878,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8005891143255,
+      y: 10.8746730347463,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8005071977604,
+      y: 10.8746295372425,
+      z: 10.6,
+    }),
+    // tru trai duoi
+    new Point({
+      x: 106.8004147392174,
+      y: 10.8746621033312,
+      z: 10.6,
+    }),
 
-                new Point({
-                    x: 106.800255805588,
-                    y: 10.8747942223917,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8001691316963,
-                    y: 10.8748661417271,
-                    z: 10.6,
-                }),
-                // tru phai duoi
-                new Point({
-                    x: 106.8001978353117,
-                    y: 10.8753802207828,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8002754038429,
-                    y: 10.8754310557639,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8003546972048,
-                    y: 10.8754828824904,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8004333896031,
-                    y: 10.8755347940046,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8005155295267,
-                    y: 10.8755751558578,
-                    z: 10.6,
-                }),
-                // tru phai tren
-                new Point({
-                    x: 106.8007356830422,
-                    y: 10.875459315117,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8008552961659,
-                    y: 10.875366526588,
-                    z: 10.6,
-                })
-            ];
+    new Point({
+      x: 106.800255805588,
+      y: 10.8747942223917,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8001691316963,
+      y: 10.8748661417271,
+      z: 10.6,
+    }),
+    // tru phai duoi
+    new Point({
+      x: 106.8001978353117,
+      y: 10.8753802207828,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8002754038429,
+      y: 10.8754310557639,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8003546972048,
+      y: 10.8754828824904,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8004333896031,
+      y: 10.8755347940046,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8005155295267,
+      y: 10.8755751558578,
+      z: 10.6,
+    }),
+    // tru phai tren
+    new Point({
+      x: 106.8007356830422,
+      y: 10.875459315117,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8008552961659,
+      y: 10.875366526588,
+      z: 10.6,
+    }),
+  ];
   const truCaoGiua = [
     new Point({
       x: 106.8008974135815,
@@ -240,39 +241,40 @@ function ModelPage() {
       z: 16.8,
     }),
   ];
-const truMatsau = [
-                new Point({
-                    x: 106.8001222191377,
-                    y: 10.8752932001054,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.800118279629,
-                    y: 10.8752297547824,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8001141236037,
-                    y: 10.8751663163001,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.8001099737203,
-                    y: 10.875099882461,
-                    z: 10.6,
-                }),
+  const truMatsau = [
+    new Point({
+      x: 106.8001222191377,
+      y: 10.8752932001054,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.800118279629,
+      y: 10.8752297547824,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8001141236037,
+      y: 10.8751663163001,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.8001099737203,
+      y: 10.875099882461,
+      z: 10.6,
+    }),
 
-                new Point({
-                    x: 106.8001058656165,
-                    y: 10.8750337330329,
-                    z: 10.6,
-                }),
-                new Point({
-                    x: 106.80010202505,
-                    y: 10.8749713576347,
-                    z: 10.6,
-                })
-            ];
+    new Point({
+      x: 106.8001058656165,
+      y: 10.8750337330329,
+      z: 10.6,
+    }),
+    new Point({
+      x: 106.80010202505,
+      y: 10.8749713576347,
+      z: 10.6,
+    }),
+  ];
+
   useEffect(() => {
     const geojsonLayer = new GeoJSONLayer({
       url: url,
@@ -385,33 +387,37 @@ const truMatsau = [
         })
         .catch(console.error);
     }
-                for(var i = 0; i <truMatsau.length; i++){
-                Mesh.createFromGLTF(truMatsau[i], trutangG_matsau)
-                    .then(function (geometry) {
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+    for (var i = 0; i < truMatsau.length; i++) {
+      Mesh.createFromGLTF(truMatsau[i], trutangG_matsau)
+        .then(function (geometry) {
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [
+                {
+                  type: "fill",
+                },
+              ],
+            },
+          });
 
-                        view.graphics.add(graphic);
-                        console.log("success")
-                    })
-                    .catch(console.error);
-            }
-
+          view.graphics.add(graphic);
+          console.log("success");
+        })
+        .catch(console.error);
+    }
     asyncFn();
   }, []);
 
   return (
     <div className="home-container">
-      <Header />
-      <div ref={mapRef} style={{ height: "100vh" }}></div>
-      <Footer />
+        <Header />
+          <div className="home-bannerImage-container">
+            <img src={BannerBackground} alt="" />
+          </div>
+        <div ref={mapRef} style={{ height: "100vh", width: "80vw", margin: '0 auto' }}></div>
+        <Footer />
     </div>
   );
 }

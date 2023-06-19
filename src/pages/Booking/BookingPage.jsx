@@ -1,10 +1,19 @@
 import React from "react";
 import "./BookingPage.css";
+import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer/Footer";
+import BannerBackground from "../../Assets/home-banner-background.png";
 import pic1 from "../../Assets/booking_pic1.png";
 
 export default function BookingPage() {
   return (
-    <div>
+    <div className="home-container">
+      <Header />
+        <div className="home-banner-container">
+          <div className="home-bannerImage-container">
+            <img src={BannerBackground} alt="" />
+          </div>
+        </div>
       <div className="booking-container">
         <div className="booking-container-left">
           <img src={pic1} alt="" />
@@ -24,6 +33,7 @@ export default function BookingPage() {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

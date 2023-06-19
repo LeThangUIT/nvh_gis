@@ -207,7 +207,11 @@ nav {
   margin-top: 10rem;
 }
 .footer-logo-container {
-  max-width: 110px;
+  max-width: 80px;
+}
+.footer-logo-container  > img {
+  border-radius: 100%;
+
 }
 .footer-icons {
   margin-top: 2.5rem;
