@@ -6,20 +6,29 @@ import BannerBackground from "../../Assets/home-banner-background.png";
 import Map from "@arcgis/core/Map";
 import Mesh from "@arcgis/core/geometry/Mesh.js";
 import Point from "@arcgis/core/geometry/Point.js";
-import SpatialReference from "@arcgis/core/geometry/SpatialReference.js";
-import * as meshUtils from "@arcgis/core/geometry/support/meshUtils.js";
 import SceneView from "@arcgis/core/views/SceneView.js";
 import GeoJSONLayer from "@arcgis/core/layers/GeoJSONLayer.js";
 import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer.js";
 import Graphic from "@arcgis/core/Graphic.js";
 import esriRequest from "@arcgis/core/request";
 import HaiChieu from "../../Data/HaiChieu.geojson";
-import BacThang from "../../Data/BacThang.geojson";
+import BaChieu from "../../Data/BaChieu.geojson";
+
 import hoatietLen from "../../Data/Sketchup/sketchup1.glb";
 import hoatietXuong from "../../Data/Sketchup/sketchup2.glb";
+
+import hoatiet_mattruoc from "../../Data/Sketchup/hoatiet_mattruoc.glb";
+import hoatiet_phaitren from "../../Data/Sketchup/hoatiet_phaitren.glb";
+import hoatiet_phaiduoi from "../../Data/Sketchup/hoatiet_phaiduoi.glb";
+import hoatiet_traitren from "../../Data/Sketchup/hoatiet_traitren.glb";
+import hoatiet_traiduoi from "../../Data/Sketchup/hoatiet_traiduoi.glb";
+import hoatiet_matsau from "../../Data/Sketchup/hoatiet_matsau.glb";
 import trumai_congchinh from "../../Data/Sketchup/trumai_congchinh.glb";
 import trutangG from "../../Data/Sketchup/trutangG.glb";
 import trutangG_matsau from "../../Data/Sketchup/trutangG_matsau.glb";
+
+import tennvh from "../../Data/Sketchup/tennvh.glb";
+
 
 function ModelPage() {
   const mapRef = useRef(null);
@@ -42,7 +51,7 @@ function ModelPage() {
   };
   //
   //3d
-  const url = BacThang;
+  const url = BaChieu;
 
   const template = {
     title: "{Building name}",
@@ -94,7 +103,12 @@ function ModelPage() {
 
         stops: [
           { value: 0, color: "white" },
+          { value: 1, color: "#E3E3E3" },
+          { value: 2, color: "#CCCCCC" },
           { value: 50, color: "green" },
+          { value: 75, color: "#086E9C"}, // màu  bảng tên
+          { value: 100, color: "#99FFFF" }, // màu tường phòng
+          { value: 150, color: "#CCE5FF" }, // màu ghế ngoài
           { value: 5000, color: "red" },
         ],
       },
@@ -107,20 +121,88 @@ function ModelPage() {
       z: 31.8,
     }),
     new Point({
-      x: 106.801021482352,
-      y: 10.8751634988415,
+      x: 106.8010216002598,
+      y: 10.8751646243265,
       z: 31.8,
     }),
+    new Point({
+      x: 106.8010228976289,
+      y: 10.8751867997302,
+      z: 31.8,
+    }),
+    new Point({
+      x: 106.8010242830173,
+      y: 10.8752085891775,
+      z: 31.8,
+    })
   ];
   const positionListXuong = [
     new Point({
-      x: 106.8010208655628,
-      y: 10.8751523267307,
+      x: 106.8010209251016,
+      y: 10.8751532393889,
       z: 31.85,
     }),
+    new Point({
+      x: 106.8010223019298,
+      y: 10.8751757163479,
+      z: 31.85,
+    }),
+    new Point({
+      x: 106.8010235345282,
+      y: 10.8751976991819,
+      z: 31.85,
+    }),
+    new Point({
+      x: 106.8010249631636,
+      y: 10.8752196206982,
+      z: 31.85,
+    })
   ];
 
-  const truNganXungQuanh = [
+
+  const positionHoatiet_matruoc = [
+    new Point({
+      x: 106.8010193294543,
+      y: 10.8751022923646,
+      z: 31.8,
+    })
+  ];
+    const positionHoatiet_phaitren = [
+    new Point({
+      x: 106.800837279964,
+      y: 10.8754337967085,
+      z: 31.8,
+    })
+  ];
+  const positionHoatiet_phaiduoi = [
+    new Point({
+      x: 106.8003574190074,
+      y: 10.8755897588051,
+      z: 31.8,
+    })
+  ];
+  const positionHoatiet_traitren = [
+    new Point({
+      x: 106.8006765325014,
+      y: 10.8746692876802,
+      z: 31.8,
+    })
+  ];
+  const positionHoatiet_traiduoi = [
+    new Point({
+      x: 106.8001653498866,
+      y: 10.8748472530148,
+      z: 31.8,
+    })
+  ];
+  const positionHoatiet_matsau = [
+    new Point({
+      x: 106.8001954747037,
+      y: 10.875250803292,
+      z: 31.8,
+    })
+  ];
+    const truNganXungQuanh = [
     // tru mat truoc
     new Point({
       x: 106.8008998090075,
@@ -227,19 +309,19 @@ function ModelPage() {
       x: 106.8008552961659,
       y: 10.875366526588,
       z: 10.6,
-    }),
+    })
   ];
   const truCaoGiua = [
     new Point({
-      x: 106.8008974135815,
-      y: 10.875048539353,
-      z: 16.8,
-    }),
-    new Point({
       x: 106.8009012987711,
       y: 10.8751328247517,
-      z: 16.8,
+      z: 34
     }),
+    new Point({
+      x: 106.8008974135815,
+      y: 10.875048539353,
+      z: 34
+    })
   ];
   const truMatsau = [
     new Point({
@@ -272,9 +354,15 @@ function ModelPage() {
       x: 106.80010202505,
       y: 10.8749713576347,
       z: 10.6,
-    }),
+    })
   ];
-
+  const pos_tennvh = [
+    new Point({
+      x: 106.8007904618155,
+      y: 10.8751998012749,
+      z: 35,
+    })
+  ];
   useEffect(() => {
     const geojsonLayer = new GeoJSONLayer({
       url: url,
@@ -307,46 +395,133 @@ function ModelPage() {
       });
       map.add(graphicsLayer);
     };
-    for (var i = 0; i < positionListLen.length; i++) {
-      Mesh.createFromGLTF(positionListLen[i], hoatietLen)
+    for (var i = 0; i < positionHoatiet_matruoc.length; i++) {
+      Mesh.createFromGLTF(positionHoatiet_matruoc[i], hoatiet_mattruoc)
         .then(function (geometry) {
           const graphic = new Graphic({
             geometry,
             symbol: {
               type: "mesh-3d",
-              symbolLayers: [
-                {
-                  type: "fill",
-                },
-              ],
-            },
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
           });
 
           view.graphics.add(graphic);
-          console.log("success");
+          console.log("success")
         })
         .catch(console.error);
     }
-    for (var i = 0; i < positionListXuong.length; i++) {
-      Mesh.createFromGLTF(positionListXuong[i], hoatietXuong)
+    for (var i = 0; i < positionHoatiet_phaitren.length; i++) {
+      Mesh.createFromGLTF(positionHoatiet_phaitren[i], hoatiet_phaitren)
         .then(function (geometry) {
           const graphic = new Graphic({
             geometry,
             symbol: {
               type: "mesh-3d",
-              symbolLayers: [
-                {
-                  type: "fill",
-                },
-              ],
-            },
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
           });
 
           view.graphics.add(graphic);
-          console.log("success");
+          console.log("success")
         })
         .catch(console.error);
     }
+
+    for (var i = 0; i < positionHoatiet_phaiduoi.length; i++) {
+      Mesh.createFromGLTF(positionHoatiet_phaiduoi[i], hoatiet_phaiduoi)
+        .then(function (geometry) {
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+    }
+    for (var i = 0; i < positionHoatiet_traitren.length; i++) {
+      Mesh.createFromGLTF(positionHoatiet_traitren[i], hoatiet_traitren)
+        .then(function (geometry) {
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+    }
+    for (var i = 0; i < positionHoatiet_traiduoi.length; i++) {
+      Mesh.createFromGLTF(positionHoatiet_traiduoi[i], hoatiet_traiduoi)
+        .then(function (geometry) {
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+    }
+    for (var i = 0; i < positionHoatiet_matsau.length; i++) {
+      Mesh.createFromGLTF(positionHoatiet_matsau[i], hoatiet_matsau)
+        .then(function (geometry) {
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+    }
+    for (var i = 0; i < positionHoatiet_matsau.length; i++) {
+                Mesh.createFromGLTF(positionHoatiet_matsau[i], hoatiet_matsau)
+                    .then(function (geometry) {
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
+
+                        view.graphics.add(graphic);
+                        console.log("success")
+                    })
+                    .catch(console.error);
+            }
     for (var i = 0; i < truNganXungQuanh.length; i++) {
       Mesh.createFromGLTF(truNganXungQuanh[i], trutangG)
         .then(function (geometry) {
@@ -354,16 +529,14 @@ function ModelPage() {
             geometry,
             symbol: {
               type: "mesh-3d",
-              symbolLayers: [
-                {
-                  type: "fill",
-                },
-              ],
-            },
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
           });
 
           view.graphics.add(graphic);
-          console.log("success");
+          console.log("success")
         })
         .catch(console.error);
     }
@@ -374,16 +547,14 @@ function ModelPage() {
             geometry,
             symbol: {
               type: "mesh-3d",
-              symbolLayers: [
-                {
-                  type: "fill",
-                },
-              ],
-            },
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
           });
 
           view.graphics.add(graphic);
-          console.log("success");
+          console.log("success")
         })
         .catch(console.error);
     }
@@ -394,19 +565,42 @@ function ModelPage() {
             geometry,
             symbol: {
               type: "mesh-3d",
-              symbolLayers: [
-                {
-                  type: "fill",
-                },
-              ],
-            },
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
           });
 
           view.graphics.add(graphic);
-          console.log("success");
+          console.log("success")
         })
         .catch(console.error);
     }
+    for (var i = 0; i < pos_tennvh.length; i++) {
+      Mesh.createFromGLTF(pos_tennvh[i], tennvh)
+        .then(function (geometry) {
+          geometry.scale(0.85, { origin: pos_tennvh[i] });
+          geometry.rotate(0, 0, 1);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill", // autocasts as new FillSymbol3DLayer()
+                material: {
+                  color: [255, 227, 151, 1],
+                  colorMixMode: "tint"
+                }
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success 1")
+        })
+        .catch(console.log("failed 1"));
+    }
+
     asyncFn();
   }, []);
 
