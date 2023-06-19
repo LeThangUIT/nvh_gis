@@ -106,7 +106,8 @@ function ModelPage() {
           { value: 2, color: "#CCCCCC" },
           { value: 50, color: "green" },
           { value: 75, color: "#086E9C"}, // màu  bảng tên
-          { value: 100, color: [153, 217, 234] }, // màu tường phòng
+          { value: 100, color: "#99FFFF" }, // màu tường phòng
+          { value: 150, color: "#CCE5FF" }, // màu ghế ngoài
           { value: 5000, color: "red" },
         ],
       },
@@ -313,12 +314,12 @@ function ModelPage() {
     new Point({
       x: 106.8009012987711,
       y: 10.8751328247517,
-      z: 16.8
+      z: 34
     }),
     new Point({
       x: 106.8008974135815,
       y: 10.875048539353,
-      z: 16.8
+      z: 34
     })
   ];
   const truMatsau = [
@@ -356,8 +357,8 @@ function ModelPage() {
   ];
   const pos_tennvh = [
     new Point({
-      x: 106.8007635094252,
-      y: 10.8752019002718,
+      x: 106.8007904618155,
+      y: 10.8751998012749,
       z: 35,
     })
   ];
