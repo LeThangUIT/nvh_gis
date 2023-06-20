@@ -103,8 +103,9 @@ function ModelPage() {
           { value: 0, color: "white" },
           { value: 1, color: "#E3E3E3" },
           { value: 2, color: "#CCCCCC" },
+          { value: 3, color: [153, 217, 234, 0.5] },
           { value: 50, color: "green" },
-          { value: 75, color: "#086E9C"}, // màu  bảng tên
+          { value: 75, color: "#086E9C" }, // màu  bảng tên
           { value: 100, color: "#99FFFF" }, // màu tường phòng
           { value: 150, color: "#CCE5FF" }, // màu ghế ngoài
           { value: 5000, color: "red" },
@@ -113,7 +114,7 @@ function ModelPage() {
     ],
   };
 
-const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
     // create a new blob from geojson featurecollection
@@ -157,7 +158,7 @@ const [visible, setVisible] = useState(true)
       map.add(graphicsLayer);
     };
 
-    if(visible) {
+    if (visible) {
       for (var i = 0; i < positionHoatiet_matruoc.length; i++) {
         Mesh.createFromGLTF(positionHoatiet_matruoc[i], hoatiet_mattruoc)
           .then(function (geometry) {
@@ -170,7 +171,7 @@ const [visible, setVisible] = useState(true)
                 }]
               }
             });
-  
+
             view.graphics.add(graphic);
             console.log("success")
           })
@@ -188,13 +189,13 @@ const [visible, setVisible] = useState(true)
                 }]
               }
             });
-  
+
             view.graphics.add(graphic);
             console.log("success")
           })
           .catch(console.error);
       }
-  
+
       for (var i = 0; i < positionHoatiet_phaiduoi.length; i++) {
         Mesh.createFromGLTF(positionHoatiet_phaiduoi[i], hoatiet_phaiduoi)
           .then(function (geometry) {
@@ -207,7 +208,7 @@ const [visible, setVisible] = useState(true)
                 }]
               }
             });
-  
+
             view.graphics.add(graphic);
             console.log("success")
           })
@@ -225,7 +226,7 @@ const [visible, setVisible] = useState(true)
                 }]
               }
             });
-  
+
             view.graphics.add(graphic);
             console.log("success")
           })
@@ -243,7 +244,7 @@ const [visible, setVisible] = useState(true)
                 }]
               }
             });
-  
+
             view.graphics.add(graphic);
             console.log("success")
           })
@@ -261,30 +262,30 @@ const [visible, setVisible] = useState(true)
                 }]
               }
             });
-  
+
             view.graphics.add(graphic);
             console.log("success")
           })
           .catch(console.error);
       }
       for (var i = 0; i < positionHoatiet_matsau.length; i++) {
-                  Mesh.createFromGLTF(positionHoatiet_matsau[i], hoatiet_matsau)
-                      .then(function (geometry) {
-                          const graphic = new Graphic({
-                              geometry,
-                              symbol: {
-                                  type: "mesh-3d",
-                                  symbolLayers: [{
-                                      type: "fill"
-                                  }]
-                              }
-                          });
-  
-                          view.graphics.add(graphic);
-                          console.log("success")
-                      })
-                      .catch(console.error);
+        Mesh.createFromGLTF(positionHoatiet_matsau[i], hoatiet_matsau)
+          .then(function (geometry) {
+            const graphic = new Graphic({
+              geometry,
+              symbol: {
+                type: "mesh-3d",
+                symbolLayers: [{
+                  type: "fill"
+                }]
               }
+            });
+
+            view.graphics.add(graphic);
+            console.log("success")
+          })
+          .catch(console.error);
+      }
       for (var i = 0; i < truNganXungQuanh.length; i++) {
         Mesh.createFromGLTF(truNganXungQuanh[i], trutangG)
           .then(function (geometry) {
@@ -297,7 +298,7 @@ const [visible, setVisible] = useState(true)
                 }]
               }
             });
-  
+
             view.graphics.add(graphic);
             console.log("success")
           })
@@ -315,7 +316,7 @@ const [visible, setVisible] = useState(true)
                 }]
               }
             });
-  
+
             view.graphics.add(graphic);
             console.log("success")
           })
@@ -333,7 +334,7 @@ const [visible, setVisible] = useState(true)
                 }]
               }
             });
-  
+
             view.graphics.add(graphic);
             console.log("success")
           })
@@ -357,7 +358,7 @@ const [visible, setVisible] = useState(true)
                 }]
               }
             });
-  
+
             view.graphics.add(graphic);
             console.log("success 1")
           })
@@ -367,22 +368,22 @@ const [visible, setVisible] = useState(true)
 
     asyncFn();
   }, [state, visible]);
-const handleFunc = () => {
-  console.log(Data.features[0].properties.idb)
-  const result = Data.features.filter(item => item.properties.idb == 3)
-  console.log(result)
-  setState({ type: "FeatureCollection", features: [...result]})
-}
+  const handleFunc = () => {
+    console.log(Data.features[0].properties.idb)
+    const result = Data.features.filter(item => item.properties.idb == 7)
+    console.log(result)
+    setState({ type: "FeatureCollection", features: [...result] })
+  }
   return (
     <div className="home-container">
-        <Header />
-          <div className="home-bannerImage-container">
-            <img src={BannerBackground} alt="" />
-          </div>
-        <div ref={mapRef} style={{ height: "100vh", width: "80vw", margin: '0 auto' }}></div>
-        <button onClick={handleFunc}>Tang 1</button>
-        <button onClick={() => {setVisible(!visible)}}>Visible</button>
-        <Footer />
+      <Header />
+      <div className="home-bannerImage-container">
+        <img src={BannerBackground} alt="" />
+      </div>
+      <div ref={mapRef} style={{ height: "100vh", width: "80vw", margin: '0 auto' }}></div>
+      <button onClick={handleFunc}>Tang 1</button>
+      <button onClick={() => { setVisible(!visible) }}>Visible</button>
+      <Footer />
     </div>
   );
 }
