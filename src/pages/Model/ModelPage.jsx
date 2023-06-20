@@ -25,8 +25,15 @@ import trumai_congchinh from "../../Data/Sketchup/trumai_congchinh.glb";
 import trutangG from "../../Data/Sketchup/trutangG.glb";
 import trutangG_matsau from "../../Data/Sketchup/trutangG_matsau.glb";
 
+import hoa1 from "../../Data/Sketchup/flower1.glb";
+import hoa2 from "../../Data/Sketchup/flower2.glb";
+import hoa4 from "../../Data/Sketchup/flower4.glb";
+import hoa8 from "../../Data/Sketchup/flower8.glb";
+import hoa9 from "../../Data/Sketchup/flower9.glb";
+
+
 import tennvh from "../../Data/Sketchup/tennvh.glb";
-import { pos_tennvh, positionHoatiet_matruoc, positionHoatiet_matsau, positionHoatiet_phaiduoi, positionHoatiet_phaitren, positionHoatiet_traiduoi, positionHoatiet_traitren, truCaoGiua, truMatsau, truNganXungQuanh } from "../../Data/prositions";
+import { pos_tennvh, positionHoatiet_matruoc, positionHoatiet_matsau, positionHoatiet_phaiduoi, positionHoatiet_phaitren, positionHoatiet_traiduoi, positionHoatiet_traitren, truCaoGiua, truMatsau, truNganXungQuanh, posHoa1, posHoa2, posHoa4, posHoa8, posHoa9 } from "../../Data/prositions";
 
 
 function ModelPage() {
@@ -195,7 +202,6 @@ function ModelPage() {
           })
           .catch(console.error);
       }
-
       for (var i = 0; i < positionHoatiet_phaiduoi.length; i++) {
         Mesh.createFromGLTF(positionHoatiet_phaiduoi[i], hoatiet_phaiduoi)
           .then(function (geometry) {
@@ -340,10 +346,10 @@ function ModelPage() {
           })
           .catch(console.error);
       }
-      for (var i = 0; i < pos_tennvh.length; i++) {
-        Mesh.createFromGLTF(pos_tennvh[i], tennvh)
+      for (var j = 0; j < pos_tennvh.length; j++) {
+        Mesh.createFromGLTF(pos_tennvh[j], tennvh)
           .then(function (geometry) {
-            geometry.scale(0.85, { origin: pos_tennvh[i] });
+            geometry.scale(0.85, { origin: pos_tennvh[j] });
             geometry.rotate(0, 0, 1);
             const graphic = new Graphic({
               geometry,
@@ -365,6 +371,109 @@ function ModelPage() {
           .catch(console.log("failed 1"));
       }
     }
+
+                for (var i = 0; i < posHoa1.length; i++) {
+                Mesh.createFromGLTF(posHoa1[i], hoa1)
+                    .then(function (geometry) {
+                        geometry.scale(1, { origin: posHoa1[i] });
+                        geometry.rotate(0, 0, 0.6);
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
+
+                        view.graphics.add(graphic);
+                        console.log("success flowwer1")
+                    })
+                    .catch(console.log("failed flowwer1"));
+            }
+            for (var i = 0; i < posHoa2.length; i++) {
+                Mesh.createFromGLTF(posHoa2[i], hoa2)
+                    .then(function (geometry) {
+                        geometry.scale(1/25, { origin: posHoa2[i] });
+                        geometry.rotate(0, 0, 0.6);
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
+
+                        view.graphics.add(graphic);
+                        console.log("success flowwer2")
+                    })
+                    .catch(console.log("failed flowwer2"));
+            }
+
+            for (var i = 0; i < posHoa4.length; i++) {
+                Mesh.createFromGLTF(posHoa4[i], hoa4)
+                    .then(function (geometry) {
+                        geometry.scale(1/33, { origin: posHoa4[i] });
+                        geometry.rotate(0, 0, 0.6);
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
+
+                        view.graphics.add(graphic);
+                        console.log("success flowwer4")
+                    })
+                    .catch(console.log("failed flowwer4"));
+            }
+            for (var i = 0; i < posHoa8.length; i++) {
+                Mesh.createFromGLTF(posHoa8[i], hoa8)
+                    .then(function (geometry) {
+                        geometry.scale(2/3, { origin: posHoa8[i] });
+                        geometry.rotate(0, 0, 0.6);
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
+
+                        view.graphics.add(graphic);
+                        console.log("success flowwer8")
+                    })
+                    .catch(console.log("failed flowwer8"));
+            }
+            for (var i = 0; i < posHoa9.length; i++) {
+                Mesh.createFromGLTF(posHoa9[i], hoa9)
+                    .then(function (geometry) {
+                        geometry.scale(1/18, { origin: posHoa9[i] });
+                        geometry.rotate(0, 0, 0.6);
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
+
+                        view.graphics.add(graphic);
+                        console.log("success flowwer1")
+                    })
+                    .catch(console.log("failed flowwer1"));
+            }
+
 
     asyncFn();
   }, [state, visible]);
