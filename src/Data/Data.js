@@ -5251,7 +5251,7 @@
        type: "Feature",
        properties: {
          BuildingName: "Mái che tầng thượng",
-         height: 0.01,
+         height: 0.00001,
          idb: 0,
          color: 3,
        },

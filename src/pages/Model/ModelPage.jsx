@@ -110,7 +110,7 @@ function ModelPage() {
           { value: 0, color: "white" },
           { value: 1, color: "#E3E3E3" },
           { value: 2, color: "#CCCCCC" },
-          { value: 3, color: [153, 217, 234, 0.5] },
+          { value: 3, color: [153, 217, 234, 0.2] },
           { value: 50, color: "green" },
           { value: 75, color: "#086E9C" }, // màu  bảng tên
           { value: 100, color: "#99FFFF" }, // màu tường phòng
@@ -469,9 +469,9 @@ function ModelPage() {
                         });
 
                         view.graphics.add(graphic);
-                        console.log("success flowwer1")
+                        console.log("success flowwer9")
                     })
-                    .catch(console.log("failed flowwer1"));
+                    .catch(console.log("failed flowwer9"));
             }
 
 

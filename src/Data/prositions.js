@@ -20,7 +20,7 @@ export const positionListLen = [
     x: 106.8010242830173,
     y: 10.8752085891775,
     z: 31.8,
-  })
+  }),
 ];
 export const positionListXuong = [
   new Point({
@@ -42,51 +42,50 @@ export const positionListXuong = [
     x: 106.8010249631636,
     y: 10.8752196206982,
     z: 31.85,
-  })
+  }),
 ];
-
 
 export const positionHoatiet_matruoc = [
   new Point({
     x: 106.8010193294543,
     y: 10.8751022923646,
     z: 31.8,
-  })
+  }),
 ];
 export const positionHoatiet_phaitren = [
   new Point({
     x: 106.800837279964,
     y: 10.8754337967085,
     z: 31.8,
-  })
+  }),
 ];
 export const positionHoatiet_phaiduoi = [
   new Point({
     x: 106.8003574190074,
     y: 10.8755897588051,
     z: 31.8,
-  })
+  }),
 ];
 export const positionHoatiet_traitren = [
   new Point({
     x: 106.8006765325014,
     y: 10.8746692876802,
     z: 31.8,
-  })
+  }),
 ];
 export const positionHoatiet_traiduoi = [
   new Point({
     x: 106.8001653498866,
     y: 10.8748472530148,
     z: 31.8,
-  })
+  }),
 ];
 export const positionHoatiet_matsau = [
   new Point({
     x: 106.8001954747037,
     y: 10.875250803292,
     z: 31.8,
-  })
+  }),
 ];
 export const truNganXungQuanh = [
   // tru mat truoc
@@ -195,19 +194,19 @@ export const truNganXungQuanh = [
     x: 106.8008552961659,
     y: 10.875366526588,
     z: 10.6,
-  })
+  }),
 ];
 export const truCaoGiua = [
   new Point({
     x: 106.8009012987711,
     y: 10.8751328247517,
-    z: 34
+    z: 34,
   }),
   new Point({
     x: 106.8008974135815,
     y: 10.875048539353,
-    z: 34
-  })
+    z: 34,
+  }),
 ];
 export const truMatsau = [
   new Point({
@@ -240,14 +239,14 @@ export const truMatsau = [
     x: 106.80010202505,
     y: 10.8749713576347,
     z: 10.6,
-  })
+  }),
 ];
 export const pos_tennvh = [
   new Point({
     x: 106.8007904618155,
     y: 10.8751998012749,
     z: 35,
-  })
+  }),
 ];
 
 export const posHoa1 = [
@@ -292,37 +291,27 @@ export const posHoa2 = [
   new Point({
     x: 106.801319317237,
     y: 10.8752508651637,
-    z: -22
+    z: -34.5
   }),
   new Point({
     x: 106.8013010597031,
     y: 10.8752226123195,
-    z: -22
+    z: -34.5
   }),
   new Point({
     x: 106.8012903993805,
     y: 10.875176765049,
-    z: -22
+    z: -34.5
   }),
   new Point({
     x: 106.8012596156496,
     y: 10.8751081895027,
-    z: -22
+    z: -34.5
   }),
   new Point({
     x: 106.8012779071708,
     y: 10.8750662978773,
-    z: -22
-  }),
-  new Point({
-    x: 106.8012780095109,
-    y: 10.8749970654472,
-    z: -22
-  }),
-  new Point({
-    x: 106.8013009943722,
-    y: 10.8749537867328,
-    z: -22
+    z: -34.5
   })
 ];
 export const posHoa4 = [
@@ -366,7 +355,7 @@ export const posHoa4 = [
     x: 106.8013062783704,
     y: 10.8749377094246,
     z: -59,
-  })
+  }),
 ];
 
 export const posHoa8 = [
@@ -444,44 +433,34 @@ export const posHoa8 = [
     x: 106.8013122677995,
     y: 10.8750932449421,
     z: 1,
-  })  
+  }),
 ];
 
 export const posHoa9 = [
   new Point({
     x: 106.8013213406537,
     y: 10.8754769660836,
-    z: -10,
-  }),
-  new Point({
-    x: 106.8012841653041,
-    y: 10.8751310158284,
-    z: -10,
+    z: -8,
   }),
   new Point({
     x: 106.8013138468619,
     y: 10.8754220130845,
-    z: -10,
+    z: -8,
   }),
   new Point({
     x: 106.8013175657593,
     y: 10.8753473417843,
-    z: -10,
+    z: -8,
   }),
 
   new Point({
     x: 106.8012703696652,
     y: 10.8753062373956,
-    z: -10,
-  }),
-  new Point({
-    x: 106.8012790543598,
-    y: 10.8752468058467,
-    z: -10,
+    z: -8,
   }),
   new Point({
     x: 106.8013041292423,
     y: 10.8752356106969,
-    z: -10,
+    z: -8,
   }),
 ];
