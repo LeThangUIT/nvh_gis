@@ -477,24 +477,33 @@ function ModelPage() {
 
     asyncFn();
   }, [state, visible]);
-  const handleFunc = () => {
-    console.log(Data.features[0].properties.idb)
-    const result = Data.features.filter(item => item.properties.idb == 7)
-    console.log(result)
-    setState({ type: "FeatureCollection", features: [...result] })
+  const handleFunc = (num) => {
+    if(num == -1) {
+      setState(Data)
+    }
+    else {
+      const result = Data.features.filter(item => item.properties.idb == num || item.properties.idb == 0)
+      setState({ type: "FeatureCollection", features: [...result]})
+      setVisible(false)
+    }
   }
-  return (
-    <div className="home-container">
-      <Header />
-      <div className="home-bannerImage-container">
-        <img src={BannerBackground} alt="" />
+    return (
+      <div className="home-container">
+          <Header />
+            <div className="home-bannerImage-container">
+              <img src={BannerBackground} alt="" />
+            </div>
+          <div ref={mapRef} style={{ height: "100vh", width: "80vw", margin: '0 auto' }}></div>
+          <button onClick={() => handleFunc(-1)}>Tat ca</button>
+          <button onClick={() => handleFunc(2)}>Tang 2</button>
+          <button onClick={() => handleFunc(3)}>Tang 3</button>
+          <button onClick={() => handleFunc(4)}>Tang 4</button>
+          <button onClick={() => handleFunc(5)}>Tang 5</button>
+          <button onClick={() => handleFunc(6)}>Tang 6</button>
+          <button onClick={() => {setVisible(!visible)}}>Visible</button>
+          <Footer />
       </div>
-      <div ref={mapRef} style={{ height: "100vh", width: "80vw", margin: '0 auto' }}></div>
-      <button onClick={handleFunc}>Tang 1</button>
-      <button onClick={() => { setVisible(!visible) }}>Visible</button>
-      <Footer />
-    </div>
-  );
+    );
 }
 
 export default ModelPage;
