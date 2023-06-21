@@ -1036,7 +1036,7 @@
       ]
     ],
     "Symbol": {
-      "type": "simple-line",
+      "type": "simple-fill",
       "color": "#FFFFFF",
       "width": 200
     },
