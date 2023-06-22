@@ -11,7 +11,7 @@ import GraphicsLayer from "@arcgis/core/layers/GraphicsLayer.js";
 import Graphic from "@arcgis/core/Graphic.js";
 import esriRequest from "@arcgis/core/request";
 import HaiChieu from "../../Data/HaiChieu.geojson";
-import Data from '../../Data/Data'
+import Data from "../../Data/Data";
 import hoatietLen from "../../Data/Sketchup/sketchup1.glb";
 import hoatietXuong from "../../Data/Sketchup/sketchup2.glb";
 
@@ -31,10 +31,26 @@ import hoa4 from "../../Data/Sketchup/flower4.glb";
 import hoa8 from "../../Data/Sketchup/flower8.glb";
 import hoa9 from "../../Data/Sketchup/flower9.glb";
 
-
 import tennvh from "../../Data/Sketchup/tennvh.glb";
-import { pos_tennvh, positionHoatiet_matruoc, positionHoatiet_matsau, positionHoatiet_phaiduoi, positionHoatiet_phaitren, positionHoatiet_traiduoi, positionHoatiet_traitren, truCaoGiua, truMatsau, truNganXungQuanh, posHoa1, posHoa2, posHoa4, posHoa8, posHoa9 } from "../../Data/prositions";
+import {
+  pos_tennvh,
+  positionHoatiet_matruoc,
+  positionHoatiet_matsau,
+  positionHoatiet_phaiduoi,
+  positionHoatiet_phaitren,
+  positionHoatiet_traiduoi,
+  positionHoatiet_traitren,
+  truCaoGiua,
+  truMatsau,
+  truNganXungQuanh,
+  posHoa1,
+  posHoa2,
+  posHoa4,
+  posHoa8,
+  posHoa9,
+} from "../../Data/prositions";
 
+import { ModelPgae } from "./ModelPage.css";
 
 function ModelPage() {
   const mapRef = useRef(null);
@@ -57,7 +73,7 @@ function ModelPage() {
   };
   //
   //3d
-  const [state, setState] = useState(Data)
+  const [state, setState] = useState(Data);
   const template = {
     title: "{BuildingName}",
     content: "Height: {height}, color: {color}",
@@ -121,12 +137,12 @@ function ModelPage() {
     ],
   };
 
-  const [visible, setVisible] = useState(true)
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     // create a new blob from geojson featurecollection
     const blob = new Blob([JSON.stringify(state)], {
-      type: "application/json"
+      type: "application/json",
     });
 
     // URL reference to the blob
@@ -173,14 +189,16 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill"
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success")
+            console.log("success");
           })
           .catch(console.error);
       }
@@ -191,14 +209,16 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill"
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success")
+            console.log("success");
           })
           .catch(console.error);
       }
@@ -209,14 +229,16 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill"
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success")
+            console.log("success");
           })
           .catch(console.error);
       }
@@ -227,14 +249,16 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill"
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success")
+            console.log("success");
           })
           .catch(console.error);
       }
@@ -245,14 +269,16 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill"
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success")
+            console.log("success");
           })
           .catch(console.error);
       }
@@ -263,14 +289,16 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill"
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success")
+            console.log("success");
           })
           .catch(console.error);
       }
@@ -281,14 +309,16 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill"
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success")
+            console.log("success");
           })
           .catch(console.error);
       }
@@ -299,14 +329,16 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill"
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success")
+            console.log("success");
           })
           .catch(console.error);
       }
@@ -317,14 +349,16 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill"
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success")
+            console.log("success");
           })
           .catch(console.error);
       }
@@ -335,14 +369,16 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill"
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success")
+            console.log("success");
           })
           .catch(console.error);
       }
@@ -355,155 +391,185 @@ function ModelPage() {
               geometry,
               symbol: {
                 type: "mesh-3d",
-                symbolLayers: [{
-                  type: "fill", // autocasts as new FillSymbol3DLayer()
-                  material: {
-                    color: [255, 227, 151, 1],
-                    colorMixMode: "tint"
-                  }
-                }]
-              }
+                symbolLayers: [
+                  {
+                    type: "fill", // autocasts as new FillSymbol3DLayer()
+                    material: {
+                      color: [255, 227, 151, 1],
+                      colorMixMode: "tint",
+                    },
+                  },
+                ],
+              },
             });
 
             view.graphics.add(graphic);
-            console.log("success 1")
+            console.log("success 1");
           })
           .catch(console.log("failed 1"));
       }
     }
 
-                for (var i = 0; i < posHoa1.length; i++) {
-                Mesh.createFromGLTF(posHoa1[i], hoa1)
-                    .then(function (geometry) {
-                        geometry.scale(1, { origin: posHoa1[i] });
-                        geometry.rotate(0, 0, 0.6);
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+    for (var i = 0; i < posHoa1.length; i++) {
+      Mesh.createFromGLTF(posHoa1[i], hoa1)
+        .then(function (geometry) {
+          geometry.scale(1, { origin: posHoa1[i] });
+          geometry.rotate(0, 0, 0.6);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [
+                {
+                  type: "fill",
+                },
+              ],
+            },
+          });
 
-                        view.graphics.add(graphic);
-                        console.log("success flowwer1")
-                    })
-                    .catch(console.log("failed flowwer1"));
-            }
-            for (var i = 0; i < posHoa2.length; i++) {
-                Mesh.createFromGLTF(posHoa2[i], hoa2)
-                    .then(function (geometry) {
-                        geometry.scale(1/25, { origin: posHoa2[i] });
-                        geometry.rotate(0, 0, 0.6);
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+          view.graphics.add(graphic);
+          console.log("success flowwer1");
+        })
+        .catch(console.log("failed flowwer1"));
+    }
+    for (var i = 0; i < posHoa2.length; i++) {
+      Mesh.createFromGLTF(posHoa2[i], hoa2)
+        .then(function (geometry) {
+          geometry.scale(1 / 25, { origin: posHoa2[i] });
+          geometry.rotate(0, 0, 0.6);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [
+                {
+                  type: "fill",
+                },
+              ],
+            },
+          });
 
-                        view.graphics.add(graphic);
-                        console.log("success flowwer2")
-                    })
-                    .catch(console.log("failed flowwer2"));
-            }
+          view.graphics.add(graphic);
+          console.log("success flowwer2");
+        })
+        .catch(console.log("failed flowwer2"));
+    }
 
-            for (var i = 0; i < posHoa4.length; i++) {
-                Mesh.createFromGLTF(posHoa4[i], hoa4)
-                    .then(function (geometry) {
-                        geometry.scale(1/33, { origin: posHoa4[i] });
-                        geometry.rotate(0, 0, 0.6);
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+    for (var i = 0; i < posHoa4.length; i++) {
+      Mesh.createFromGLTF(posHoa4[i], hoa4)
+        .then(function (geometry) {
+          geometry.scale(1 / 33, { origin: posHoa4[i] });
+          geometry.rotate(0, 0, 0.6);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [
+                {
+                  type: "fill",
+                },
+              ],
+            },
+          });
 
-                        view.graphics.add(graphic);
-                        console.log("success flowwer4")
-                    })
-                    .catch(console.log("failed flowwer4"));
-            }
-            for (var i = 0; i < posHoa8.length; i++) {
-                Mesh.createFromGLTF(posHoa8[i], hoa8)
-                    .then(function (geometry) {
-                        geometry.scale(2/3, { origin: posHoa8[i] });
-                        geometry.rotate(0, 0, 0.6);
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+          view.graphics.add(graphic);
+          console.log("success flowwer4");
+        })
+        .catch(console.log("failed flowwer4"));
+    }
+    for (var i = 0; i < posHoa8.length; i++) {
+      Mesh.createFromGLTF(posHoa8[i], hoa8)
+        .then(function (geometry) {
+          geometry.scale(2 / 3, { origin: posHoa8[i] });
+          geometry.rotate(0, 0, 0.6);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [
+                {
+                  type: "fill",
+                },
+              ],
+            },
+          });
 
-                        view.graphics.add(graphic);
-                        console.log("success flowwer8")
-                    })
-                    .catch(console.log("failed flowwer8"));
-            }
-            for (var i = 0; i < posHoa9.length; i++) {
-                Mesh.createFromGLTF(posHoa9[i], hoa9)
-                    .then(function (geometry) {
-                        geometry.scale(1/18, { origin: posHoa9[i] });
-                        geometry.rotate(0, 0, 0.6);
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+          view.graphics.add(graphic);
+          console.log("success flowwer8");
+        })
+        .catch(console.log("failed flowwer8"));
+    }
+    for (var i = 0; i < posHoa9.length; i++) {
+      Mesh.createFromGLTF(posHoa9[i], hoa9)
+        .then(function (geometry) {
+          geometry.scale(1 / 18, { origin: posHoa9[i] });
+          geometry.rotate(0, 0, 0.6);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [
+                {
+                  type: "fill",
+                },
+              ],
+            },
+          });
 
-                        view.graphics.add(graphic);
-                        console.log("success flowwer9")
-                    })
-                    .catch(console.log("failed flowwer9"));
-            }
-
+          view.graphics.add(graphic);
+          console.log("success flowwer9");
+        })
+        .catch(console.log("failed flowwer9"));
+    }
 
     asyncFn();
   }, [state, visible]);
   const handleFunc = (num) => {
-    if(num == -1) {
-      setState(Data)
+    if (num == -1) {
+      setState(Data);
+    } else {
+      const result = Data.features.filter(
+        (item) => item.properties.idb == num || item.properties.idb == 0
+      );
+      setState({ type: "FeatureCollection", features: [...result] });
+      setVisible(false);
     }
-    else {
-      const result = Data.features.filter(item => item.properties.idb == num || item.properties.idb == 0)
-      setState({ type: "FeatureCollection", features: [...result]})
-      setVisible(false)
-    }
-  }
-    return (
-      <div className="home-container">
-          <Header />
-            <div className="home-bannerImage-container">
-              <img src={BannerBackground} alt="" />
-            </div>
-          <div ref={mapRef} style={{ height: "100vh", width: "80vw", margin: '0 auto' }}></div>
-          <button onClick={() => handleFunc(-1)}>Tat ca</button>
-          <button onClick={() => handleFunc(2)}>Tang 2</button>
-          <button onClick={() => handleFunc(3)}>Tang 3</button>
-          <button onClick={() => handleFunc(4)}>Tang 4</button>
-          <button onClick={() => handleFunc(5)}>Tang 5</button>
-          <button onClick={() => handleFunc(6)}>Tang 6</button>
-          <button onClick={() => {setVisible(!visible)}}>Visible</button>
-          <Footer />
+  };
+  return (
+    <div className="home-container">
+      <Header />
+      <div className="home-bannerImage-container">
+        <img src={BannerBackground} alt="" />
       </div>
-    );
+      <div className="background-content">
+        <div
+          ref={mapRef}
+          style={{
+            height: "100vh",
+            width: "90vw",
+            boxShadow: "rgba(0, 0, 0, 0.3) 0px 3px 8px",
+            margin: "0 auto",
+          }}
+        ></div>
+        <div className="btn">
+          <button onClick={() => handleFunc(-1)}>Tất cả</button>
+          <button onClick={() => handleFunc(2)}>Tầng 2</button>
+          <button onClick={() => handleFunc(3)}>Tầng 3</button>
+          <button onClick={() => handleFunc(4)}>Tầng 4</button>
+          <button onClick={() => handleFunc(5)}>Tầng 5</button>
+          <button onClick={() => handleFunc(6)}>Tầng 6</button>
+          {/* <button
+          onClick={() => {
+            setVisible(!visible);
+          }}
+        >
+          Visible
+        </button> */}
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
 }
 
 export default ModelPage;
