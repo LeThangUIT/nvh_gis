@@ -12,8 +12,6 @@ import Graphic from "@arcgis/core/Graphic.js";
 import esriRequest from "@arcgis/core/request";
 import HaiChieu from "../../Data/HaiChieu.geojson";
 import Data from "../../Data/Data";
-import hoatietLen from "../../Data/Sketchup/sketchup1.glb";
-import hoatietXuong from "../../Data/Sketchup/sketchup2.glb";
 
 import hoatiet_mattruoc from "../../Data/Sketchup/hoatiet_mattruoc.glb";
 import hoatiet_phaitren from "../../Data/Sketchup/hoatiet_phaitren.glb";
@@ -25,11 +23,11 @@ import trumai_congchinh from "../../Data/Sketchup/trumai_congchinh.glb";
 import trutangG from "../../Data/Sketchup/trutangG.glb";
 import trutangG_matsau from "../../Data/Sketchup/trutangG_matsau.glb";
 
-import hoa1 from "../../Data/Sketchup/flower1.glb";
-import hoa2 from "../../Data/Sketchup/flower2.glb";
-import hoa4 from "../../Data/Sketchup/flower4.glb";
-import hoa8 from "../../Data/Sketchup/flower8.glb";
-import hoa9 from "../../Data/Sketchup/flower9.glb";
+// import hoa1 from "../../Data/Sketchup/flower1.glb";
+// import hoa2 from "../../Data/Sketchup/flower2.glb";
+// import hoa4 from "../../Data/Sketchup/flower4.glb";
+// import hoa8 from "../../Data/Sketchup/flower8.glb";
+// import hoa9 from "../../Data/Sketchup/flower9.glb";
 
 import vietnam from "../../Data/Sketchup/vietnam.glb";
 import redflag from "../../Data/Sketchup/red_flag.glb";
@@ -190,9 +188,39 @@ function ModelPage() {
     };
 
     if (visible) {
+
+      for (var i = 0; i < posredflag.length; i++) {
+            console.log("10000");
+            console.log(posredflag);
+        
+        Mesh.createFromGLTF(posredflag[i], redflag)
+          .then(function (geometry) {
+            console.log("1000000000");
+
+            const graphic = new Graphic({
+              geometry,
+              symbol: {
+                type: "mesh-3d",
+                symbolLayers: [
+                  {
+                    type: "fill",
+                  },
+                ],
+              },
+            });
+            console.log("222222");
+
+            view.graphics.add(graphic);
+            console.log("success cờ ngoài");
+          })
+          .catch(console.error);
+      }
+
       for (var i = 0; i < positionHoatiet_matruoc.length; i++) {
         Mesh.createFromGLTF(positionHoatiet_matruoc[i], hoatiet_mattruoc)
           .then(function (geometry) {
+            console.log(positionHoatiet_matruoc);
+
             const graphic = new Graphic({
               geometry,
               symbol: {
@@ -529,27 +557,8 @@ function ModelPage() {
     //     })
     //     .catch(console.log("failed flowwer9"));
     // }
-///co
-    for (var i = 0; i < posredflag.length; i++) {
+    ///co
 
-      Mesh.createFromGLTF(posredflag[i], redflag)
-        .then(function (geometry) {
-          geometry.scale(5, { origin: posredflag[i] });
-          geometry.rotate(0, 0, 180);
-          const graphic = new Graphic({
-            geometry,
-            symbol: {
-              type: "mesh-3d",
-              symbolLayers: [{
-                type: "fill",
-              }]
-            }
-          });
-          view.graphics.add(graphic);
-          console.log("success co ngoai")
-        })
-        .catch(console.log("failed co ngoai"));
-    }
 
     Mesh.createFromGLTF(posvnflag, vietnam)
       .then(function (geometry) {
@@ -601,7 +610,7 @@ function ModelPage() {
             symbolLayers: [{
               type: "fill", // autocasts as new FillSymbol3DLayer()
               material: {
-                color: [255, 227, 151, 1],
+                color: [255, 165, 0],
                 colorMixMode: "tint"
               }
             }]

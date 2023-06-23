@@ -502,7 +502,8 @@ export const poscotco = [
   }),
 ];
 export const pos_tennvh_n = new Point({
-  x: 106.8011869718921, y:10.8751467574515,
+  x: 106.8011869718921, 
+  y:10.8751467574515,
   z: 1.7,
 });
 
