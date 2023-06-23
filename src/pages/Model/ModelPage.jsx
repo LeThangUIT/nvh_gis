@@ -26,12 +26,13 @@ import trutangG_matsau from "../../Data/Sketchup/trutangG_matsau.glb";
 // import hoa1 from "../../Data/Sketchup/flower1.glb";
 // import hoa2 from "../../Data/Sketchup/flower2.glb";
 // import hoa4 from "../../Data/Sketchup/flower4.glb";
-// import hoa8 from "../../Data/Sketchup/flower8.glb";
-// import hoa9 from "../../Data/Sketchup/flower9.glb";
-
+import hoatietLen from "../../Data/Sketchup/hoatiet1.glb";
+import hoatietXuong from "../../Data/Sketchup/hoatiet2.glb";
+import hoatiet_matsau2 from "../../Data/Sketchup/hoatiet_matsau_2.glb"
 import vietnam from "../../Data/Sketchup/vietnam.glb";
-import redflag from "../../Data/Sketchup/red_flag.glb";
+// import redflag from "../../Data/Sketchup/red_flag.glb";
 import cotco from "../../Data/Sketchup/cotco.glb";
+import testdata from "../../Data/Sketchup/vietnams_flag.glb";
 
 import tennvh from "../../Data/Sketchup/tennvh.glb";
 import {
@@ -45,15 +46,76 @@ import {
   truCaoGiua,
   truMatsau,
   truNganXungQuanh,
-  posHoa1,
-  posHoa2,
-  posHoa4,
-  posHoa8,
-  posHoa9,
+  // posHoa1,
+  // posHoa2,
+  // posHoa4,
+  // posHoa8,
+  // posHoa9,
   posredflag,
   posvnflag,
   poscotco,
-  pos_tennvh_n
+  pos_tennvh_n,
+  positionListLen1,
+  positionListLen2,
+  positionListLen3,
+  positionListLen4,
+  positionListLen5,
+  positionListLen6,
+  positionListLen7,
+  positionListLen8,
+  positionListLen9,
+  positionListLen10,
+  positionListLen11,
+  positionListLen12,
+  positionListLen13,
+  positionListLen14,
+  positionListLen15,
+  positionListLen16,
+  positionListLen17,
+  positionListLen18,
+  positionListLen19,
+  positionListLen20,
+  positionListLen21,
+  positionListLen22,
+  positionListLen23,
+  positionListLen24,
+  positionListLen25,
+  positionListLen26,
+  positionListLen27,
+  positionListLen28,
+  positionListLen29,
+  positionListLen30,
+  positionListXuong1,
+  positionListXuong2,
+  positionListXuong3,
+  positionListXuong4,
+  positionListXuong5,
+  positionListXuong6,
+  positionListXuong7,
+  positionListXuong8,
+  positionListXuong9,
+  positionListXuong10,
+  positionListXuong11,
+  positionListXuong12,
+  positionListXuong13,
+  positionListXuong14,
+  positionListXuong15,
+  positionListXuong16,
+  positionListXuong17,
+  positionListXuong18,
+  positionListXuong19,
+  positionListXuong20,
+  positionListXuong21,
+  positionListXuong22,
+  positionListXuong23,
+  positionListXuong24,
+  positionListXuong25,
+  positionListXuong26,
+  positionListXuong27,
+  positionListXuong28,
+  positionListXuong29,
+  positionHoatiet_matsau2
+
 } from "../../Data/prositions";
 
 import { ModelPgae } from "./ModelPage.css";
@@ -132,7 +194,7 @@ function ModelPage() {
           { value: 0, color: "white" },
           { value: 1, color: "#E3E3E3" },
           { value: 2, color: "#CCCCCC" },
-          { value: 3, color: [153, 217, 234, 0.2] },
+          { value: 3, color: [153, 217, 234, 0.25] },
           { value: 50, color: "green" },
           { value: 75, color: "#086E9C" }, // màu  bảng tên
           { value: 100, color: "#99FFFF" }, // màu tường phòng
@@ -190,12 +252,10 @@ function ModelPage() {
     if (visible) {
 
       for (var i = 0; i < posredflag.length; i++) {
-            console.log("10000");
-            console.log(posredflag);
-        
-        Mesh.createFromGLTF(posredflag[i], redflag)
+        Mesh.createFromGLTF(posredflag[i], testdata)
           .then(function (geometry) {
-            console.log("1000000000");
+            geometry.rotate(0, 0, 0);
+            geometry.scale(0.025, { origin: posredflag[i] });
 
             const graphic = new Graphic({
               geometry,
@@ -444,223 +504,1046 @@ function ModelPage() {
           })
           .catch(console.log("failed 1"));
       }
+
+      Mesh.createFromGLTF(positionListLen1, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 14);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListLen2, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 38);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListLen3, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 55);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListLen4, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 117);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen5, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 58);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListLen6, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 66);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListLen7, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 77);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListLen8, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 93);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListLen9, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 106);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen10, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 111);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListLen11, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 113);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListLen12, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 116);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen13, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 165);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen14, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 140);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen15, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 130);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen16, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 124);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen17, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 185);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen18, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 196);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen19, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 222);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen20, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 230);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen21, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 235);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen22, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 245);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen23, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 259);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen24, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 270);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen25, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 285);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen26, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 294);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen27, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 309);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen28, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 323);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen29, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 342);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListLen30, hoatietLen)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 350);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong1, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 5);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListXuong2, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 31);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListXuong3, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 42);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListXuong4, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 54);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListXuong5, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 56);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListXuong6, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 58);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListXuong7, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 73);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListXuong8, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 84);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListXuong9, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 101);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong10, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 110);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+
+      Mesh.createFromGLTF(positionListXuong11, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 112);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong12, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 114);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong13, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 117);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong14, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 155);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong15, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 135);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong16, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 127);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong17, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 123);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong18, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 190);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong19, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 210);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong20, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 233);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong21, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 238);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong22, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 252);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong23, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 267);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong24, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 275);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong25, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 290);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong26, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 303);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong27, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 315);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong28, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 330);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+      Mesh.createFromGLTF(positionListXuong29, hoatietXuong)
+        .then(function (geometry) {
+          geometry.rotate(0, 0, 346);
+          const graphic = new Graphic({
+            geometry,
+            symbol: {
+              type: "mesh-3d",
+              symbolLayers: [{
+                type: "fill"
+              }]
+            }
+          });
+
+          view.graphics.add(graphic);
+          console.log("success")
+        })
+        .catch(console.error);
+                Mesh.createFromGLTF(positionHoatiet_matsau2, hoatiet_matsau2)
+                    .then(function (geometry) {
+                        geometry.rotate(0, 0, 3);
+                        const graphic = new Graphic({
+                            geometry,
+                            symbol: {
+                                type: "mesh-3d",
+                                symbolLayers: [{
+                                    type: "fill"
+                                }]
+                            }
+                        });
+
+                        view.graphics.add(graphic);
+                        console.log("success")
+                    })
+                    .catch(console.error);
     }
-
-            //     for (var i = 0; i < posHoa1.length; i++) {
-            //     Mesh.createFromGLTF(posHoa1[i], hoa1)
-            //         .then(function (geometry) {
-            //             geometry.scale(1, { origin: posHoa1[i] });
-            //             geometry.rotate(0, 0, 0.6);
-            //             const graphic = new Graphic({
-            //                 geometry,
-            //                 symbol: {
-            //                     type: "mesh-3d",
-            //                     symbolLayers: [{
-            //                         type: "fill"
-            //                     }]
-            //                 }
-            //             });
-
-            //             view.graphics.add(graphic);
-            //             console.log("success flowwer1")
-            //         })
-            //         .catch(console.log("failed flowwer1"));
-            // }
-            // for (var i = 0; i < posHoa2.length; i++) {
-            //     Mesh.createFromGLTF(posHoa2[i], hoa2)
-            //         .then(function (geometry) {
-            //             geometry.scale(1/25, { origin: posHoa2[i] });
-            //             geometry.rotate(0, 0, 0.6);
-            //             const graphic = new Graphic({
-            //                 geometry,
-            //                 symbol: {
-            //                     type: "mesh-3d",
-            //                     symbolLayers: [{
-            //                         type: "fill"
-            //                     }]
-            //                 }
-            //             });
-
-            //             view.graphics.add(graphic);
-            //             console.log("success flowwer2")
-            //         })
-            //         .catch(console.log("failed flowwer2"));
-            // }
-
-            // for (var i = 0; i < posHoa4.length; i++) {
-            //     Mesh.createFromGLTF(posHoa4[i], hoa4)
-            //         .then(function (geometry) {
-            //             geometry.scale(1/33, { origin: posHoa4[i] });
-            //             geometry.rotate(0, 0, 0.6);
-            //             const graphic = new Graphic({
-            //                 geometry,
-            //                 symbol: {
-            //                     type: "mesh-3d",
-            //                     symbolLayers: [{
-            //                         type: "fill"
-            //                     }]
-            //                 }
-            //             });
-
-            //             view.graphics.add(graphic);
-            //             console.log("success flowwer4")
-            //         })
-            //         .catch(console.log("failed flowwer4"));
-            // }
-            // for (var i = 0; i < posHoa8.length; i++) {
-            //     Mesh.createFromGLTF(posHoa8[i], hoa8)
-            //         .then(function (geometry) {
-            //             geometry.scale(2/3, { origin: posHoa8[i] });
-            //             geometry.rotate(0, 0, 0.6);
-            //             const graphic = new Graphic({
-            //                 geometry,
-            //                 symbol: {
-            //                     type: "mesh-3d",
-            //                     symbolLayers: [{
-            //                         type: "fill"
-            //                     }]
-            //                 }
-            //             });
-
-            //             view.graphics.add(graphic);
-            //             console.log("success flowwer8")
-            //         })
-            //         .catch(console.log("failed flowwer8"));
-            // }
-            // for (var i = 0; i < posHoa9.length; i++) {
-            //     Mesh.createFromGLTF(posHoa9[i], hoa9)
-            //         .then(function (geometry) {
-            //             geometry.scale(1/18, { origin: posHoa9[i] });
-            //             geometry.rotate(0, 0, 0.6);
-            //             const graphic = new Graphic({
-            //                 geometry,
-            //                 symbol: {
-            //                     type: "mesh-3d",
-            //                     symbolLayers: [{
-            //                         type: "fill"
-            //                     }]
-            //                 }
-            //             });
-
-            //             view.graphics.add(graphic);
-            //             console.log("success flowwer9")
-            //         })
-            //         .catch(console.log("failed flowwer9"));
-            // }
-
-
-    // for (var i = 0; i < posHoa1.length; i++) {
-    //   Mesh.createFromGLTF(posHoa1[i], hoa1)
-    //     .then(function (geometry) {
-    //       geometry.scale(1, { origin: posHoa1[i] });
-    //       geometry.rotate(0, 0, 0.6);
-    //       const graphic = new Graphic({
-    //         geometry,
-    //         symbol: {
-    //           type: "mesh-3d",
-    //           symbolLayers: [
-    //             {
-    //               type: "fill",
-    //             },
-    //           ],
-    //         },
-    //       });
-
-    //       view.graphics.add(graphic);
-    //       console.log("success flowwer1");
-    //     })
-    //     .catch(console.log("failed flowwer1"));
-    // }
-    // for (var i = 0; i < posHoa2.length; i++) {
-    //   Mesh.createFromGLTF(posHoa2[i], hoa2)
-    //     .then(function (geometry) {
-    //       geometry.scale(1 / 25, { origin: posHoa2[i] });
-    //       geometry.rotate(0, 0, 0.6);
-    //       const graphic = new Graphic({
-    //         geometry,
-    //         symbol: {
-    //           type: "mesh-3d",
-    //           symbolLayers: [
-    //             {
-    //               type: "fill",
-    //             },
-    //           ],
-    //         },
-    //       });
-
-    //       view.graphics.add(graphic);
-    //       console.log("success flowwer2");
-    //     })
-    //     .catch(console.log("failed flowwer2"));
-    // }
-
-    // for (var i = 0; i < posHoa4.length; i++) {
-    //   Mesh.createFromGLTF(posHoa4[i], hoa4)
-    //     .then(function (geometry) {
-    //       geometry.scale(1 / 33, { origin: posHoa4[i] });
-    //       geometry.rotate(0, 0, 0.6);
-    //       const graphic = new Graphic({
-    //         geometry,
-    //         symbol: {
-    //           type: "mesh-3d",
-    //           symbolLayers: [
-    //             {
-    //               type: "fill",
-    //             },
-    //           ],
-    //         },
-    //       });
-
-    //       view.graphics.add(graphic);
-    //       console.log("success flowwer4");
-    //     })
-    //     .catch(console.log("failed flowwer4"));
-    // }
-    // for (var i = 0; i < posHoa8.length; i++) {
-    //   Mesh.createFromGLTF(posHoa8[i], hoa8)
-    //     .then(function (geometry) {
-    //       geometry.scale(2 / 3, { origin: posHoa8[i] });
-    //       geometry.rotate(0, 0, 0.6);
-    //       const graphic = new Graphic({
-    //         geometry,
-    //         symbol: {
-    //           type: "mesh-3d",
-    //           symbolLayers: [
-    //             {
-    //               type: "fill",
-    //             },
-    //           ],
-    //         },
-    //       });
-
-    //       view.graphics.add(graphic);
-    //       console.log("success flowwer8");
-    //     })
-    //     .catch(console.log("failed flowwer8"));
-    // }
-    // for (var i = 0; i < posHoa9.length; i++) {
-    //   Mesh.createFromGLTF(posHoa9[i], hoa9)
-    //     .then(function (geometry) {
-    //       geometry.scale(1 / 18, { origin: posHoa9[i] });
-    //       geometry.rotate(0, 0, 0.6);
-    //       const graphic = new Graphic({
-    //         geometry,
-    //         symbol: {
-    //           type: "mesh-3d",
-    //           symbolLayers: [
-    //             {
-    //               type: "fill",
-    //             },
-    //           ],
-    //         },
-    //       });
-
-    //       view.graphics.add(graphic);
-    //       console.log("success flowwer9");
-    //     })
-    //     .catch(console.log("failed flowwer9"));
-    // }
-    ///co
 
 
     Mesh.createFromGLTF(posvnflag, vietnam)

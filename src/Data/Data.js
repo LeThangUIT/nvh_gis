@@ -5438,7 +5438,7 @@ const data = {
       type: "Feature",
       properties: {
         BuildingName: "Mái che tầng thượng",
-        height: 0.00001,
+        height: 0.001,
         idb: 7,
         color: 3,
       },
