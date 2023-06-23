@@ -934,8 +934,11 @@
     ],
     "symbol": {
       "type": "simple-fill",
-      "color": "#FFFFFF",
-      "width": 1
+      "color": "#ED4B43",
+      "outline": {
+        "color": [255, 255, 255],
+        "width": 1
+      }
     },
     "properties": {
       "id": "0",
