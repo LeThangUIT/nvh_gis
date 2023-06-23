@@ -4,10 +4,11 @@ import FormInput from "../../Components/FormInput/FormInput.jsx";
 import { FiArrowRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import logo from "../../Assets/logo.png";
+import { instance } from "../../axios";
 
 const LoginPage = () => {
   const [values, setValues] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
@@ -30,13 +31,19 @@ const LoginPage = () => {
     },
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
+    const res = await instance.post('Auth/login', values)
+    console.log(res)
   };
 
   const onChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
   };
+
+  const submit = () => {
+    // console.log(values)
+  }
 
   return (
     <div className="login-container">
@@ -61,7 +68,7 @@ const LoginPage = () => {
             />
           ))}
           <div className="login-button">
-            <button>Đăng nhập</button>
+            <button onClick={submit}>Đăng nhập</button>
             <Link to="/register" className="register-btn">
               Đăng ký
               <FiArrowRight className="icon-right" />

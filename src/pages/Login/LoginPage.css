@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: #07defc;
+  background: #00A4E0;
   background-size: cover;
   /* 
     background: linear-gradient(
@@ -29,11 +29,11 @@
   font-size: 50px;
   width: 100%;
   font-weight: bold;
-  color: #07defc;
+  color: #00A4E0;
 }
 
 .login-left-container form h1 {
-  color: #07defc;
+  color: #00A4E0;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 50px;
@@ -44,7 +44,7 @@
   height: 50px;
   padding: 10px;
   border: none;
-  background-color: #07defc;
+  background-color: #00A4E0;
   color: white;
   border-radius: 5px;
   font-weight: bold;
@@ -76,7 +76,7 @@
   display: flex;
   flex-direction: row;
   background-color: white;
-  color: #07defc;
+  color: #00A4E0;
   font-size: 15px;
   align-items: center;
   justify-content: center;

@@ -372,107 +372,107 @@ function ModelPage() {
       }
     }
 
-                for (var i = 0; i < posHoa1.length; i++) {
-                Mesh.createFromGLTF(posHoa1[i], hoa1)
-                    .then(function (geometry) {
-                        geometry.scale(1, { origin: posHoa1[i] });
-                        geometry.rotate(0, 0, 0.6);
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+            //     for (var i = 0; i < posHoa1.length; i++) {
+            //     Mesh.createFromGLTF(posHoa1[i], hoa1)
+            //         .then(function (geometry) {
+            //             geometry.scale(1, { origin: posHoa1[i] });
+            //             geometry.rotate(0, 0, 0.6);
+            //             const graphic = new Graphic({
+            //                 geometry,
+            //                 symbol: {
+            //                     type: "mesh-3d",
+            //                     symbolLayers: [{
+            //                         type: "fill"
+            //                     }]
+            //                 }
+            //             });
 
-                        view.graphics.add(graphic);
-                        console.log("success flowwer1")
-                    })
-                    .catch(console.log("failed flowwer1"));
-            }
-            for (var i = 0; i < posHoa2.length; i++) {
-                Mesh.createFromGLTF(posHoa2[i], hoa2)
-                    .then(function (geometry) {
-                        geometry.scale(1/25, { origin: posHoa2[i] });
-                        geometry.rotate(0, 0, 0.6);
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+            //             view.graphics.add(graphic);
+            //             console.log("success flowwer1")
+            //         })
+            //         .catch(console.log("failed flowwer1"));
+            // }
+            // for (var i = 0; i < posHoa2.length; i++) {
+            //     Mesh.createFromGLTF(posHoa2[i], hoa2)
+            //         .then(function (geometry) {
+            //             geometry.scale(1/25, { origin: posHoa2[i] });
+            //             geometry.rotate(0, 0, 0.6);
+            //             const graphic = new Graphic({
+            //                 geometry,
+            //                 symbol: {
+            //                     type: "mesh-3d",
+            //                     symbolLayers: [{
+            //                         type: "fill"
+            //                     }]
+            //                 }
+            //             });
 
-                        view.graphics.add(graphic);
-                        console.log("success flowwer2")
-                    })
-                    .catch(console.log("failed flowwer2"));
-            }
+            //             view.graphics.add(graphic);
+            //             console.log("success flowwer2")
+            //         })
+            //         .catch(console.log("failed flowwer2"));
+            // }
 
-            for (var i = 0; i < posHoa4.length; i++) {
-                Mesh.createFromGLTF(posHoa4[i], hoa4)
-                    .then(function (geometry) {
-                        geometry.scale(1/33, { origin: posHoa4[i] });
-                        geometry.rotate(0, 0, 0.6);
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+            // for (var i = 0; i < posHoa4.length; i++) {
+            //     Mesh.createFromGLTF(posHoa4[i], hoa4)
+            //         .then(function (geometry) {
+            //             geometry.scale(1/33, { origin: posHoa4[i] });
+            //             geometry.rotate(0, 0, 0.6);
+            //             const graphic = new Graphic({
+            //                 geometry,
+            //                 symbol: {
+            //                     type: "mesh-3d",
+            //                     symbolLayers: [{
+            //                         type: "fill"
+            //                     }]
+            //                 }
+            //             });
 
-                        view.graphics.add(graphic);
-                        console.log("success flowwer4")
-                    })
-                    .catch(console.log("failed flowwer4"));
-            }
-            for (var i = 0; i < posHoa8.length; i++) {
-                Mesh.createFromGLTF(posHoa8[i], hoa8)
-                    .then(function (geometry) {
-                        geometry.scale(2/3, { origin: posHoa8[i] });
-                        geometry.rotate(0, 0, 0.6);
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+            //             view.graphics.add(graphic);
+            //             console.log("success flowwer4")
+            //         })
+            //         .catch(console.log("failed flowwer4"));
+            // }
+            // for (var i = 0; i < posHoa8.length; i++) {
+            //     Mesh.createFromGLTF(posHoa8[i], hoa8)
+            //         .then(function (geometry) {
+            //             geometry.scale(2/3, { origin: posHoa8[i] });
+            //             geometry.rotate(0, 0, 0.6);
+            //             const graphic = new Graphic({
+            //                 geometry,
+            //                 symbol: {
+            //                     type: "mesh-3d",
+            //                     symbolLayers: [{
+            //                         type: "fill"
+            //                     }]
+            //                 }
+            //             });
 
-                        view.graphics.add(graphic);
-                        console.log("success flowwer8")
-                    })
-                    .catch(console.log("failed flowwer8"));
-            }
-            for (var i = 0; i < posHoa9.length; i++) {
-                Mesh.createFromGLTF(posHoa9[i], hoa9)
-                    .then(function (geometry) {
-                        geometry.scale(1/18, { origin: posHoa9[i] });
-                        geometry.rotate(0, 0, 0.6);
-                        const graphic = new Graphic({
-                            geometry,
-                            symbol: {
-                                type: "mesh-3d",
-                                symbolLayers: [{
-                                    type: "fill"
-                                }]
-                            }
-                        });
+            //             view.graphics.add(graphic);
+            //             console.log("success flowwer8")
+            //         })
+            //         .catch(console.log("failed flowwer8"));
+            // }
+            // for (var i = 0; i < posHoa9.length; i++) {
+            //     Mesh.createFromGLTF(posHoa9[i], hoa9)
+            //         .then(function (geometry) {
+            //             geometry.scale(1/18, { origin: posHoa9[i] });
+            //             geometry.rotate(0, 0, 0.6);
+            //             const graphic = new Graphic({
+            //                 geometry,
+            //                 symbol: {
+            //                     type: "mesh-3d",
+            //                     symbolLayers: [{
+            //                         type: "fill"
+            //                     }]
+            //                 }
+            //             });
 
-                        view.graphics.add(graphic);
-                        console.log("success flowwer9")
-                    })
-                    .catch(console.log("failed flowwer9"));
-            }
+            //             view.graphics.add(graphic);
+            //             console.log("success flowwer9")
+            //         })
+            //         .catch(console.log("failed flowwer9"));
+            // }
 
 
     asyncFn();
